@@ -15,6 +15,7 @@ public class CloudChunk : MonoBehaviour, IChunkInitializer
 
     [SerializeField] Color _colorMin = new Color(1f, 1f, 1f, 0f);
     [SerializeField] Color _colorMax = new Color(1f, 1f, 1f, 1f);
+    [SerializeField] FilterMode _filterMode = FilterMode.Bilinear;
     [SerializeField] AnimationCurve _alphaCurve = AnimationCurve.EaseInOut(-1f, 0f, 1f, 1f);
 
 
@@ -37,6 +38,7 @@ public class CloudChunk : MonoBehaviour, IChunkInitializer
 
         var texture = new Texture2D(_textureResolution.x, _textureResolution.y);
         texture.wrapMode = TextureWrapMode.Clamp;
+        texture.filterMode = _filterMode;
 
         var textureFiller = Task.Run(() =>
         {

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5291221005401567306}
   - component: {fileID: 1945405151429182801}
   - component: {fileID: 3133313178285944697}
+  - component: {fileID: 1913139997441703143}
   m_Layer: 7
   m_Name: Impl
   m_TagString: Untagged
@@ -27,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254031411954135884}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5736845801725781611}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1971053207 &5291221005401567306
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
@@ -44,7 +45,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -156,7 +157,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254031411954135884}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -184,6 +185,41 @@ CapsuleCollider2D:
   m_Offset: {x: 0.05006659, y: -0.119461894}
   m_Size: {x: 0.676152, y: 1.3404933}
   m_Direction: 0
+--- !u!58 &1913139997441703143
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254031411954135884}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.05006659, y: -0.119461894}
+  serializedVersion: 2
+  m_Radius: 0.67024666
 --- !u!1 &721675864841403625
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +232,7 @@ GameObject:
   - component: {fileID: 1595380655049647897}
   - component: {fileID: 4842617547046404790}
   m_Layer: 7
-  m_Name: Boid
+  m_Name: Boid2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -245,7 +281,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &4842617547046404790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,12 +294,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9a164c76178fa44d9bb7d056c9d7abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _model: {fileID: 5736845801725781611}
   _radar: {fileID: 3778703757093970293}
+  _enemyTag: Player
+  _enemy: {fileID: 0}
   _permittedSpeed:
-    Min: 1
-    Max: 50
-  SeparationWeight: 0.05
+    Min: 4
+    Max: 10
+  SeparationWeight: 1.14
   SeparationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.012480354
+      outSlope: 0.012480354
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.5463353
+    - serializedVersion: 3
+      time: 1.944231
+      value: 0.7266307
+      inSlope: -0.448032
+      outSlope: -0.448032
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.0794624
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 2.9823945
+      value: 0.0070258807
+      inSlope: -0.013140419
+      outSlope: -0.013140419
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.58809525
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  AlignmentWeight: 0.48
+  AlignmentCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
@@ -271,48 +344,30 @@ MonoBehaviour:
       value: 1
       inSlope: 0
       outSlope: 0
-      tangentMode: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1.9602966
-      value: 0.0026855469
-      inSlope: -0.5157777
-      outSlope: -0.5157777
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.201421
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  AlignmentWeight: 0.05
-  AlignmentCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
+      time: 1
       value: 1
-      inSlope: -0.13135739
-      outSlope: -0.13135739
-      tangentMode: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.4121654
-    - serializedVersion: 3
-      time: 10.129406
-      value: -0.033289738
-      inSlope: -0.061855488
-      outSlope: -0.061855488
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.553443
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  CohesionWeight: 0.0005
+  _maxForce: 2
+  CohesionWeight: 0.22
+  _wanderThreshold: 0.4
+  NeighborsCount: 17
+  Velocity: 0
+  Separation: {x: -0.0003710756, y: 0.000031370804}
+  Alignment: {x: 0.058517683, y: 0.003597296}
+  Cohesion: {x: 1.961154, y: -0.19129825}
 --- !u!1 &8136862077525606387
 GameObject:
   m_ObjectHideFlags: 0

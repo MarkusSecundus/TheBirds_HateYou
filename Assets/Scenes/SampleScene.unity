@@ -377,7 +377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentWeight
-      value: 2.19
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationWeight
@@ -389,11 +389,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Max
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Min
-      value: 40
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.size
@@ -401,11 +401,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].time
-      value: 17.961763
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].value
-      value: -0.023211138
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].time
@@ -425,23 +425,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].inSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1360911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].outSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].inSlope
@@ -457,7 +457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outWeight
-      value: 0.24934413
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].outSlope
@@ -486,6 +486,14 @@ PrefabInstance:
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5291221005401567306, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_DynamicOccludee
@@ -981,7 +989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentWeight
-      value: 2.19
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationWeight
@@ -993,11 +1001,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Max
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Min
-      value: 40
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.size
@@ -1005,11 +1013,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].time
-      value: 17.961763
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].value
-      value: -0.023211138
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].time
@@ -1029,23 +1037,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].inSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1360911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].outSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].inSlope
@@ -1061,7 +1069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outWeight
-      value: 0.24934413
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].outSlope
@@ -1090,6 +1098,14 @@ PrefabInstance:
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5291221005401567306, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_DynamicOccludee
@@ -1332,7 +1348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentWeight
-      value: 2.19
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationWeight
@@ -1344,11 +1360,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Max
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Min
-      value: 40
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.size
@@ -1356,11 +1372,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].time
-      value: 17.961763
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].value
-      value: -0.023211138
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].time
@@ -1380,23 +1396,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].inSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1360911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].outSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].inSlope
@@ -1412,7 +1428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outWeight
-      value: 0.24934413
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].outSlope
@@ -1441,6 +1457,14 @@ PrefabInstance:
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5291221005401567306, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_DynamicOccludee
@@ -2017,6 +2041,7 @@ MonoBehaviour:
   _textureResolution: {x: 256, y: 256}
   _colorMin: {r: 0, g: 0, b: 0, a: 1}
   _colorMax: {r: 0.735849, g: 0.6187783, b: 0.06644455, a: 1}
+  _filterMode: 0
   _alphaCurve:
     serializedVersion: 2
     m_Curve:
@@ -2135,7 +2160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentWeight
-      value: 2.19
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationWeight
@@ -2147,11 +2172,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Max
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Min
-      value: 40
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.size
@@ -2159,11 +2184,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].time
-      value: 17.961763
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].value
-      value: -0.023211138
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].time
@@ -2183,23 +2208,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].inSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1360911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].outSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].inSlope
@@ -2215,7 +2240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outWeight
-      value: 0.24934413
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].outSlope
@@ -2244,6 +2269,14 @@ PrefabInstance:
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5291221005401567306, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_DynamicOccludee
@@ -2307,9 +2340,10 @@ GameObject:
   - component: {fileID: 831587395}
   - component: {fileID: 831587396}
   - component: {fileID: 831587397}
+  - component: {fileID: 831587398}
   m_Layer: 0
   m_Name: Airplane
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2341,7 +2375,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831587392}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2418,6 +2452,18 @@ MonoBehaviour:
   Window:
     Min: {x: -2, y: -2, z: 0}
     Max: {x: 2, y: 2, z: 0}
+--- !u!114 &831587398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831587392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 892ea403925902341a60a32b46cccbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &972033594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2476,7 +2522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentWeight
-      value: 2.19
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationWeight
@@ -2488,11 +2534,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Max
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Min
-      value: 40
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.size
@@ -2500,11 +2546,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].time
-      value: 17.961763
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].value
-      value: -0.023211138
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].time
@@ -2524,23 +2570,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].inSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1360911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].outSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].inSlope
@@ -2556,7 +2602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outWeight
-      value: 0.24934413
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].outSlope
@@ -2585,6 +2631,14 @@ PrefabInstance:
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5291221005401567306, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_DynamicOccludee
@@ -2790,7 +2844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentWeight
-      value: 2.19
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationWeight
@@ -2802,11 +2856,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Max
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Min
-      value: 40
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.size
@@ -2814,11 +2868,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].time
-      value: 17.961763
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].value
-      value: -0.023211138
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].time
@@ -2838,23 +2892,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].inSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1360911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].outSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].inSlope
@@ -2870,7 +2924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outWeight
-      value: 0.24934413
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].outSlope
@@ -2899,6 +2953,14 @@ PrefabInstance:
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5291221005401567306, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_DynamicOccludee
@@ -3141,7 +3203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentWeight
-      value: 2.19
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationWeight
@@ -3153,11 +3215,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Max
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Min
-      value: 40
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.size
@@ -3165,11 +3227,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].time
-      value: 17.961763
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].value
-      value: -0.023211138
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].time
@@ -3189,23 +3251,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].inSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1360911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].outSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].inSlope
@@ -3221,7 +3283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outWeight
-      value: 0.24934413
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].outSlope
@@ -3250,6 +3312,14 @@ PrefabInstance:
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5291221005401567306, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_DynamicOccludee
@@ -3455,7 +3525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentWeight
-      value: 2.19
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationWeight
@@ -3467,11 +3537,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Max
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Min
-      value: 40
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.size
@@ -3479,11 +3549,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].time
-      value: 17.961763
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].value
-      value: -0.023211138
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].time
@@ -3503,23 +3573,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].inSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1360911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].outSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].inSlope
@@ -3535,7 +3605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outWeight
-      value: 0.24934413
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].outSlope
@@ -3564,6 +3634,14 @@ PrefabInstance:
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5291221005401567306, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_DynamicOccludee
@@ -3672,7 +3750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentWeight
-      value: 2.19
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationWeight
@@ -3684,11 +3762,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Max
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Min
-      value: 40
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.size
@@ -3696,11 +3774,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].time
-      value: 17.961763
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].value
-      value: -0.023211138
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].time
@@ -3720,23 +3798,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].inSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1360911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].outSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].inSlope
@@ -3752,7 +3830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outWeight
-      value: 0.24934413
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].outSlope
@@ -3781,6 +3859,14 @@ PrefabInstance:
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5291221005401567306, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_DynamicOccludee
@@ -3889,7 +3975,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentWeight
-      value: 2.19
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationWeight
@@ -3901,11 +3987,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Max
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Min
-      value: 40
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.size
@@ -3913,11 +3999,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].time
-      value: 17.961763
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].value
-      value: -0.023211138
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].time
@@ -3937,23 +4023,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].inSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1360911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].outSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].inSlope
@@ -3969,7 +4055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outWeight
-      value: 0.24934413
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].outSlope
@@ -3998,6 +4084,14 @@ PrefabInstance:
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5291221005401567306, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_DynamicOccludee
@@ -4106,7 +4200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentWeight
-      value: 2.19
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationWeight
@@ -4118,11 +4212,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Max
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Min
-      value: 40
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.size
@@ -4130,11 +4224,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].time
-      value: 17.961763
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].value
-      value: -0.023211138
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].time
@@ -4154,23 +4248,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].inSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1360911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].outSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].inSlope
@@ -4186,7 +4280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outWeight
-      value: 0.24934413
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].outSlope
@@ -4215,6 +4309,14 @@ PrefabInstance:
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5291221005401567306, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_DynamicOccludee
@@ -4452,7 +4554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentWeight
-      value: 2.19
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationWeight
@@ -4464,11 +4566,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Max
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Min
-      value: 40
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.size
@@ -4476,11 +4578,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].time
-      value: 17.961763
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].value
-      value: -0.023211138
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].time
@@ -4500,23 +4602,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].inSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1360911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].outSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].inSlope
@@ -4532,7 +4634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outWeight
-      value: 0.24934413
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].outSlope
@@ -4561,6 +4663,14 @@ PrefabInstance:
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5291221005401567306, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_DynamicOccludee
@@ -4819,7 +4929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentWeight
-      value: 2.19
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationWeight
@@ -4831,11 +4941,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Max
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Min
-      value: 40
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.size
@@ -4843,11 +4953,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].time
-      value: 17.961763
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].value
-      value: -0.023211138
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].time
@@ -4867,23 +4977,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].inSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1360911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].outSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].inSlope
@@ -4899,7 +5009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outWeight
-      value: 0.24934413
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].outSlope
@@ -4928,6 +5038,14 @@ PrefabInstance:
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5291221005401567306, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_DynamicOccludee
@@ -5036,7 +5154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentWeight
-      value: 2.19
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationWeight
@@ -5048,11 +5166,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Max
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Min
-      value: 40
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.size
@@ -5060,11 +5178,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].time
-      value: 17.961763
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].value
-      value: -0.023211138
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].time
@@ -5084,23 +5202,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].inSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1360911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].outSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].inSlope
@@ -5116,7 +5234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outWeight
-      value: 0.24934413
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].outSlope
@@ -5145,6 +5263,14 @@ PrefabInstance:
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5291221005401567306, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_DynamicOccludee
@@ -5248,6 +5374,7 @@ MonoBehaviour:
   _textureResolution: {x: 64, y: 64}
   _colorMin: {r: 1, g: 1, b: 1, a: 0}
   _colorMax: {r: 1, g: 1, b: 1, a: 1}
+  _filterMode: 1
   _alphaCurve:
     serializedVersion: 2
     m_Curve:
@@ -5365,7 +5492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentWeight
-      value: 2.19
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationWeight
@@ -5377,11 +5504,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Max
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Min
-      value: 40
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.size
@@ -5389,11 +5516,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].time
-      value: 17.961763
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].value
-      value: -0.023211138
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].time
@@ -5413,23 +5540,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].inSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1360911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].outSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].inSlope
@@ -5445,7 +5572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outWeight
-      value: 0.24934413
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].outSlope
@@ -5474,6 +5601,14 @@ PrefabInstance:
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5291221005401567306, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_DynamicOccludee
@@ -5617,7 +5752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentWeight
-      value: 2.19
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationWeight
@@ -5629,11 +5764,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Max
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Min
-      value: 40
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.size
@@ -5641,11 +5776,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].time
-      value: 17.961763
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].value
-      value: -0.023211138
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].time
@@ -5665,23 +5800,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].inSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1360911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].outSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].inSlope
@@ -5697,7 +5832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outWeight
-      value: 0.24934413
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].outSlope
@@ -5726,6 +5861,14 @@ PrefabInstance:
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5291221005401567306, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_DynamicOccludee
@@ -5795,7 +5938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2069520874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5866,7 +6009,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069520873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 150}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5953,7 +6096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentWeight
-      value: 2.19
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationWeight
@@ -5965,11 +6108,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Max
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: _permittedSpeed.Min
-      value: 40
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.size
@@ -5977,11 +6120,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].time
-      value: 17.961763
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].value
-      value: -0.023211138
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].time
@@ -6001,23 +6144,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].inSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outSlope
-      value: -0.038359184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1360911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[1].outSlope
-      value: -0.10462299
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].inSlope
@@ -6033,7 +6176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: AlignmentCurve.m_Curve.Array.data[0].outWeight
-      value: 0.24934413
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[0].outSlope
@@ -6062,6 +6205,14 @@ PrefabInstance:
     - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: SeparationCurve.m_Curve.Array.data[1].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
+      propertyPath: AlignmentCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5291221005401567306, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_DynamicOccludee
@@ -6127,162 +6278,6 @@ PrefabInstance:
     - target: {fileID: 1945405151429182801, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_Creator
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: Cohesion.x
-      value: 1.961154
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: Cohesion.y
-      value: -0.19129825
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: Velocity.x
-      value: 0.000000027997999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: Velocity.y
-      value: 0.000000029802354
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: Alignment.x
-      value: 0.058517683
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: Alignment.y
-      value: 0.003597296
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: Separation.x
-      value: -0.0003710756
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: Separation.y
-      value: 0.000031370804
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: CohesionWeight
-      value: 0.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: NeighborsCount
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: AlignmentWeight
-      value: 2.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: SeparationWeight
-      value: 1.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: _wanderThreshold
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: _permittedSpeed.Max
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: _permittedSpeed.Min
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: SeparationCurve.m_Curve.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: AlignmentCurve.m_Curve.Array.data[1].time
-      value: 17.961763
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: AlignmentCurve.m_Curve.Array.data[1].value
-      value: -0.023211138
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: SeparationCurve.m_Curve.Array.data[1].time
-      value: 1.944231
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: SeparationCurve.m_Curve.Array.data[2].time
-      value: 2.9823945
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: SeparationCurve.m_Curve.Array.data[1].value
-      value: 0.7266307
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: SeparationCurve.m_Curve.Array.data[2].value
-      value: 0.0070258807
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: AlignmentCurve.m_Curve.Array.data[0].inSlope
-      value: -0.038359184
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: AlignmentCurve.m_Curve.Array.data[1].inSlope
-      value: -0.10462299
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: AlignmentCurve.m_Curve.Array.data[0].outSlope
-      value: -0.038359184
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: AlignmentCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1360911
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: AlignmentCurve.m_Curve.Array.data[1].outSlope
-      value: -0.10462299
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: SeparationCurve.m_Curve.Array.data[0].inSlope
-      value: 0.012480354
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: SeparationCurve.m_Curve.Array.data[1].inSlope
-      value: -0.448032
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: SeparationCurve.m_Curve.Array.data[2].inSlope
-      value: -0.013140419
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: AlignmentCurve.m_Curve.Array.data[0].outWeight
-      value: 0.24934413
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: SeparationCurve.m_Curve.Array.data[0].outSlope
-      value: 0.012480354
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: SeparationCurve.m_Curve.Array.data[1].inWeight
-      value: 0.0794624
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: SeparationCurve.m_Curve.Array.data[1].outSlope
-      value: -0.448032
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: SeparationCurve.m_Curve.Array.data[2].inWeight
-      value: 0.58809525
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: SeparationCurve.m_Curve.Array.data[2].outSlope
-      value: -0.013140419
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: SeparationCurve.m_Curve.Array.data[0].outWeight
-      value: 0.5463353
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842617547046404790, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: SeparationCurve.m_Curve.Array.data[1].outWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291221005401567306, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
-      propertyPath: m_DynamicOccludee
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6979809820177483430, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
       propertyPath: m_LocalPosition.x
