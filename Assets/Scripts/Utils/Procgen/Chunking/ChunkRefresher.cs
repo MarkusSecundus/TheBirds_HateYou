@@ -28,7 +28,9 @@ namespace MarkusSecundus.Utils.Procgen.Chunking
             for (int x = Window.Min.x; x <= Window.Max.x; ++x)
                 for (int y = Window.Min.y; y <= Window.Max.y; ++y)
                     for (int z = Window.Min.z; z <= Window.Max.z; ++z)
+                    {
                         ChunkSystem.GetChunkByIndex(chunkCoords + new Vector3Int(x, y, z));
+                    }
         }
     }
 }
