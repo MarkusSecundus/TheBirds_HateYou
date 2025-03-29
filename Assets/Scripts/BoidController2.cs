@@ -1,3 +1,4 @@
+using Cinemachine.Utility;
 using MarkusSecundus.Utils.Behaviors.Automatization;
 using MarkusSecundus.Utils.Behaviors.GameObjects;
 using MarkusSecundus.Utils.Datastructs;
@@ -102,8 +103,8 @@ public class BoidController2 : MonoBehaviour, IRandomizer
             }
         }
 
-        separationVelocity *= 1f/separationWeightSum;
-        averageVelocity *= 1f / alignmentWeightSum;
+        if(separationWeightSum > 0f) separationVelocity *= 1f / separationWeightSum;
+        if (alignmentWeightSum > 0f) averageVelocity *= 1f / alignmentWeightSum;
         centerOfFlockRelative *= 1f / _radarData.Active.Count;
 
         Vector2 desiredVelocity = averageVelocity.normalized * _permittedSpeed.Max;
@@ -118,7 +119,8 @@ public class BoidController2 : MonoBehaviour, IRandomizer
         //Vector2 velocityDirection = (totalTargetVelocity - _rb.velocity).ClampMagnitude(_permittedSpeed.Min, _permittedSpeed.Max);
 
         Vector2 actualAppliedForce = Vector2.Lerp(totalTargetVelocity, enemyPursueVelocity, _enemyPursueFactor);
-        _rb.AddForce(actualAppliedForce);
+        if(!actualAppliedForce.IsNaN())
+            _rb.AddForce(actualAppliedForce);
 
 
     }

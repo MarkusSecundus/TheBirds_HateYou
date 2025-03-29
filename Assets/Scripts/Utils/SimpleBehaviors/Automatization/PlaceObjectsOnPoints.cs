@@ -21,10 +21,15 @@ namespace MarkusSecundus.Utils.Behaviors.Automatization
         /// Set of points where the objects will be spawned.
         /// </summary>
         [SerializeField] public IPointsSupplier SpawnLocation;
+
+        [SerializeField] public int MaxChildrenInExistence = -1;
         /// <summary>
         /// Root of the transform hierarchy where spawned objects will be placed
         /// </summary>
         public Transform ParentToFill;
+
+        public int ChildrenCount => ParentToFill.transform.childCount;
+
         /// <summary>
         /// Prototype of the spawned object
         /// </summary>
@@ -66,10 +71,13 @@ namespace MarkusSecundus.Utils.Behaviors.Automatization
         }
         private void PlaceObjects(IEnumerable<Vector3> points, bool shouldClear = false)
         {
+            if (MaxChildrenInExistence >= 0 && ChildrenCount >= MaxChildrenInExistence) return;
+
             var random = new System.Random(RealSeed);
 
             foreach (var v in points)
             {
+                if (MaxChildrenInExistence >= 0 && ChildrenCount >= MaxChildrenInExistence) break;
                 var obj = ToPlace.InstantiateWithTransform();
                 obj.transform.position = v + ToPlace.transform.localPosition;
                 obj.transform.SetParent(ParentToFill);

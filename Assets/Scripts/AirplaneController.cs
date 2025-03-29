@@ -6,65 +6,55 @@ using UnityEngine;
 
 public class AirplaneController : MonoBehaviour
 {
-    [SerializeField] float _maxVelocityChange = 10f;
-    [SerializeField] float _maxTorqueChange = 2f;
-
-    [SerializeField] float _maxVelocity = 10f;
-    [SerializeField] float _maxTorque = 1f;
-    [SerializeField] float _acceleration = 1f;
-    [SerializeField] float _angularAcceleration = 1f;
+    [SerializeField] AirplaneConfig cfg;
 
 
-    [SerializeField] float _enginePower = 0f;
-    [SerializeField] float _targetRotation;
+    float _currentEnginePower = 0f;
+    float _desiredRotation;
 
     Rigidbody2D _rb;
 
-    [SerializeField] Transform _airplaneModel;
-    [SerializeField] Vector3 modelUp;
-    [SerializeField] Vector3 _modelShiftPre;
-    [SerializeField] Vector3 _modelShiftPost;
+    [SerializeField] TempThrottleUI _tempThrottleUI;
+
+
+
+    void EvaluateForces(float speedChange, float rotationChange)
+    {
+        _currentEnginePower = (_currentEnginePower + speedChange * Time.deltaTime).Clamp(cfg.VelocityRange);
+        Vector2 desiredVelocity = transform.up * _currentEnginePower;
+
+        _desiredRotation = (_desiredRotation + rotationChange * Time.deltaTime);
+        float neededRotationChange = _desiredRotation - _rb.rotation;
+        float desiredTorque = (neededRotationChange - _rb.angularVelocity).DegreesNormalize();
+
+        _rb.AddForce((desiredVelocity - _rb.velocity).ClampMagnitude(0f, cfg.VelocityApplicationCap));
+        _rb.AddTorque(desiredTorque.Clamp(-cfg.RotationApplicationCap, cfg.RotationApplicationCap));
+    }
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _rb.centerOfMass = transform.localPosition;
-        _targetRotation = _rb.rotation;
-        _enginePower = _maxVelocity * 0.65f;
 
+        _desiredRotation = _rb.rotation;
+        _currentEnginePower = cfg.VelocityRange.Average();
         _airplaneModel.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(transform.up.y, transform.up.x) * Mathf.Rad2Deg);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        float enginePowerDelta = 0f;
-        float rotationDelta = 0f;
-
-        if (Input.GetKey(KeyCode.A))
-            rotationDelta += _angularAcceleration * Time.deltaTime;
-        if (Input.GetKey(KeyCode.D))
-            rotationDelta -= _angularAcceleration * Time.deltaTime;
-        if (Input.GetKey(KeyCode.W))
-            enginePowerDelta += _acceleration * Time.deltaTime;
-        if (Input.GetKey(KeyCode.S))
-            enginePowerDelta -= _acceleration * Time.deltaTime;
-
-        _enginePower = (_enginePower + enginePowerDelta).Clamp(0, _maxVelocity);
-        _targetRotation += rotationDelta.Clamp(-_maxTorque, _maxTorque);
-
-        Vector2 targetVelocity = transform.up * _enginePower;
-        Vector2 velocityDistance = (targetVelocity - _rb.velocity).ClampMagnitude(0f, _maxVelocityChange);
-
-        float rotationDistance = _targetRotation - _rb.rotation;
-        float torqueDistance = (rotationDistance - _rb.angularVelocity).Clamp(-_maxTorqueChange, _maxTorqueChange);
-
-        _rb.AddForce(velocityDistance);
-        _rb.AddTorque(torqueDistance);
+        GetInput(out float enginePowerDelta, out float rotationDelta);
+        EvaluateForces(enginePowerDelta, rotationDelta);
 
         UpdateModel();
+
+        _tempThrottleUI.Slider.value = 1 - (_currentEnginePower - cfg.VelocityRange.Min) / (cfg.VelocityRange.Max - cfg.VelocityRange.Min);
     }
 
+
+    [SerializeField] Transform _airplaneModel;
+    [SerializeField] Vector3 modelUp;
+    [SerializeField] Vector3 _modelShift;
     void UpdateModel()
     {
         if (_airplaneModel.IsNil()) return;
@@ -72,5 +62,21 @@ public class AirplaneController : MonoBehaviour
         //if(Mathf.Abs(desiredRotation - _airplaneModel.rotation.eulerAngles.z) < 90f)
             _airplaneModel.rotation = Quaternion.Euler(0, 0, desiredRotation);
 
+    }
+
+
+    void GetInput(out float enginePowerDelta, out float rotationDelta)
+    {
+        enginePowerDelta = 0f;
+        rotationDelta = 0f;
+
+        if (Input.GetKey(KeyCode.A))
+            rotationDelta += cfg.RotationChangePerSeconds_degrees;
+        if (Input.GetKey(KeyCode.D))
+            rotationDelta -= cfg.RotationChangePerSeconds_degrees;
+        if (Input.GetKey(KeyCode.W))
+            enginePowerDelta += cfg.VelocityChangePerSecond;
+        if (Input.GetKey(KeyCode.S))
+            enginePowerDelta -= cfg.VelocityChangePerSecond;
     }
 }
