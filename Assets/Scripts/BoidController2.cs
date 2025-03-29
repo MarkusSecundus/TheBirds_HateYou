@@ -18,6 +18,7 @@ public class BoidController2 : MonoBehaviour, IRandomizer
     [SerializeField] string _enemyTag;
     [SerializeField] Rigidbody2D _enemy;
     [SerializeField] float _enemyPursueFactor;
+    [SerializeField] float _distanceToDie = 40f;
     [SerializeField] AnimationCurve _enemyPursueProbabilityCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
 
     ColliderActivityInfo<BoidController2> _radarData = new ColliderActivityInfo<BoidController2>(c=>(c as Collider2D)?.attachedRigidbody?.GetComponent<BoidController2>());
@@ -32,12 +33,7 @@ public class BoidController2 : MonoBehaviour, IRandomizer
     [SerializeField] float _maxForce = 2f;
     [SerializeField] float CohesionWeight;
     [SerializeField] float _wanderThreshold = 1f;
-
-    [SerializeField] int NeighborsCount = 0;
-    [SerializeField] float Velocity;
-    [SerializeField] Vector2 Separation;
-    [SerializeField] Vector2 Alignment;
-    [SerializeField] Vector2 Cohesion;
+    [SerializeField] float _boidWeight = 1f;
 
     Rigidbody2D _rb;
 
@@ -55,17 +51,24 @@ public class BoidController2 : MonoBehaviour, IRandomizer
 
     void Update()
     {
+        if(_enemy.position.Distance(_rb.position) > _distanceToDie)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         if (_model.IsNotNil())
         {
             float rot = Mathf.Atan2(_rb.velocity.y, _rb.velocity.x) * Mathf.Rad2Deg;
             _model.rotation = Quaternion.Euler(0, 0, rot);
         }
-        NeighborsCount = _radarData.Active.Count;
-        Velocity = _rb.velocity.magnitude;
-        if (_radarData.Active.IsEmpty() || _rb.velocity.sqrMagnitude < _wanderThreshold.Sqr())
+
+        Vector2 enemyPursueVelocity = (_enemy.position - _rb.position).normalized * _permittedSpeed.Max;
+        Vector2 enemyPursueVelocityDistance = (enemyPursueVelocity - _rb.velocity).ClampMagnitude(0f, _maxForce);
+
+        if (_radarData.Active.IsEmpty() || _rb.velocity.sqrMagnitude < _wanderThreshold.Sqr() || _enemyPursueFactor >= 0.95f)
         {
-            var direction = _defaultDirection * _permittedSpeed.Average();
-            _rb.AddForce(direction - _rb.velocity);
+            _rb.AddForce(enemyPursueVelocityDistance);
             return;
         }
 
@@ -78,6 +81,8 @@ public class BoidController2 : MonoBehaviour, IRandomizer
         
         foreach(var neighbor in _radarData.Active)
         {
+            if (neighbor.IsNil()) continue;
+
             var directionToNeighbor = neighbor._rb.position - _rb.position;
             var directionToNeighborNormalized = directionToNeighbor.Normalized(out float distance);
             {
@@ -109,22 +114,17 @@ public class BoidController2 : MonoBehaviour, IRandomizer
         alignmentVelocity *= AlignmentWeight;
         cohesionVelocity *= CohesionWeight;
 
-        Separation = separationVelocity;
-        Alignment = alignmentVelocity;
-        Cohesion = cohesionVelocity;
-
-        Vector2 totalTargetVelocity = (separationVelocity + alignmentVelocity + cohesionVelocity);
+        Vector2 totalTargetVelocity = (separationVelocity + alignmentVelocity + cohesionVelocity) * _boidWeight;
         //Vector2 velocityDirection = (totalTargetVelocity - _rb.velocity).ClampMagnitude(_permittedSpeed.Min, _permittedSpeed.Max);
 
-        Vector2 enemyPursueVelocity = (_enemy.position - _rb.position).ClampMagnitude(0f, _permittedSpeed.Max);
-
-        _rb.AddForce(totalTargetVelocity);
+        Vector2 actualAppliedForce = Vector2.Lerp(totalTargetVelocity, enemyPursueVelocity, _enemyPursueFactor);
+        _rb.AddForce(actualAppliedForce);
 
 
     }
 
     public void Randomize(System.Random random)
     {
-        _enemyPursueFactor = _enemyPursueProbabilityCurve.Evaluate(random.NextFloat());
+        _enemyPursueFactor = _enemyPursueProbabilityCurve.Evaluate(random.NextFloat()).Clamp01();
     }
 }

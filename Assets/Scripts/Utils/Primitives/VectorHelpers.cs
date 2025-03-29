@@ -487,7 +487,9 @@ namespace MarkusSecundus.Utils.Primitives
         /// Fluent shortcut for <see cref="Vector3.Distance(Vector3, Vector3)"/>
         /// </summary>
         /// <returns>Distance between the two vectors</returns>
+        public static float Distance(this Vector2 self, Vector2 b) => Vector2.Distance(self, b);
         public static float Distance(this Vector3 self, Vector3 b) => Vector3.Distance(self, b);
+        public static float DistanceSqr(this Vector2 self, Vector2 b) => Vector2.SqrMagnitude(self - b);
         public static float DistanceSqr(this Vector3 self, Vector3 b) => Vector3.SqrMagnitude(self - b);
 
         /// <summary>
@@ -548,7 +550,6 @@ namespace MarkusSecundus.Utils.Primitives
 
         public static Vector3Int AsInt(this Vector3 v) => new Vector3Int((int)v.x, (int)v.y, (int)v.z);
         public static Vector2Int AsInt(this Vector2 v) => new Vector2Int((int)v.x, (int)v.y);
-
 
         public static IEnumerable<Vector2Int> IterateValuesInclusive(this Interval<Vector2Int> self)
         {

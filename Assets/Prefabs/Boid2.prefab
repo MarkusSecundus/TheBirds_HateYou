@@ -157,7 +157,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254031411954135884}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -192,7 +192,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254031411954135884}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -214,7 +214,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.05006659, y: -0.119461894}
@@ -298,9 +298,44 @@ MonoBehaviour:
   _radar: {fileID: 3778703757093970293}
   _enemyTag: Player
   _enemy: {fileID: 0}
+  _enemyPursueFactor: 0
+  _distanceToDie: 70
+  _enemyPursueProbabilityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.01896789
+      value: 0.13177943
+      inSlope: 0.06390168
+      outSlope: 0.06390168
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.7128128
+    - serializedVersion: 3
+      time: 0.61962724
+      value: 0.29926234
+      inSlope: 0.9965363
+      outSlope: 0.9965363
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.8422393
+      outSlope: 1.8422393
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _permittedSpeed:
     Min: 4
-    Max: 10
+    Max: 40
   SeparationWeight: 1.14
   SeparationCurve:
     serializedVersion: 2
@@ -360,14 +395,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _maxForce: 2
+  _maxForce: 10
   CohesionWeight: 0.22
   _wanderThreshold: 0.4
-  NeighborsCount: 17
-  Velocity: 0
-  Separation: {x: -0.0003710756, y: 0.000031370804}
-  Alignment: {x: 0.058517683, y: 0.003597296}
-  Cohesion: {x: 1.961154, y: -0.19129825}
+  _boidWeight: 0.5
 --- !u!1 &8136862077525606387
 GameObject:
   m_ObjectHideFlags: 0

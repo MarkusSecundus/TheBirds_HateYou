@@ -30,9 +30,15 @@ namespace MarkusSecundus.Utils.Physics
             _listeners ??= new();
             _listeners.Add(listener);
             if (UseTrigger && _triggers.IsNotNil())
+            {
                 foreach (var t in _triggers) listener.Enter(t);
+                foreach (var t in _triggers2D) listener.Enter(t);
+            }
             if (UseCollision && _collisions.IsNotNil())
+            {
                 foreach (var c in _collisions) listener.Enter(c);
+                foreach (var c in _collisions2D) listener.Enter(c);
+            }
         }
         public bool UnregisterListener(IColliderActivityInfo listener) => _listeners?.Remove(listener) == true;
 
