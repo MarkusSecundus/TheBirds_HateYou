@@ -52,7 +52,7 @@ namespace MarkusSecundus.Utils.Procgen.Chunking
             _chunks.Clear();
             foreach (Transform chunk in _chunksRoot)
                 if (TryParseChunkName(chunk.name, out var coords))
-                    _chunks[coords] = new ChunkInfo { Chunk = chunk.gameObject, LastSeenTimestamp = Time.timeAsDouble };
+                    _chunks[coords] = new ChunkInfo(chunk.gameObject);
 
             if(_chunkTimeToLive_seconds > Mathf.Epsilon)
             {
@@ -82,6 +82,8 @@ namespace MarkusSecundus.Utils.Procgen.Chunking
 
         struct ChunkInfo
         {
+            public ChunkInfo(GameObject chunk) => (Chunk, LastSeenTimestamp) = (chunk, Time.timeAsDouble);
+
             public GameObject Chunk;
             public double LastSeenTimestamp;
         }
@@ -96,12 +98,12 @@ namespace MarkusSecundus.Utils.Procgen.Chunking
 
             var chunk = ChunkPrefab ? Instantiate(ChunkPrefab) : new GameObject();
             chunk.name = GenerateChunkName(chunkCoords);
-            chunk.transform.SetParent(GetChunksRoot());
+            chunk.transform.SetParent(GetChunksRoot(), false);
             chunk.transform.localPosition = GetChunkLocalOrigin(chunkCoords);
             chunk.SetActive(true);
             foreach (var toInit in chunk.GetComponentsInChildren<IChunkInitializer>(true))
                 toInit.InitChunk(chunkCoords, this);
-            _chunks[chunkCoords] = new ChunkInfo { Chunk = chunk, LastSeenTimestamp = Time.timeAsDouble };
+            _chunks[chunkCoords] = new ChunkInfo(chunk.gameObject);
             return chunk;
         }
         public bool TryGetChunkByIndex(Vector3Int chunkCoords, out GameObject ret)
@@ -114,7 +116,7 @@ namespace MarkusSecundus.Utils.Procgen.Chunking
                     _chunks.Remove(chunkCoords);
                     return false;
                 }
-                info.LastSeenTimestamp = Time.timeAsDouble;
+                _chunks[chunkCoords] = new ChunkInfo(info.Chunk); //Chunk info is a struct -> to set new timestamp, the whole value must be set anew
                 ret = info.Chunk;
                 return true;
             }

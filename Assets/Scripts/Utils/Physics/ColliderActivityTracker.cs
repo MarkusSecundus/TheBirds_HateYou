@@ -50,14 +50,13 @@ namespace MarkusSecundus.Utils.Physics
         {
             set ??= new();
             set.Add(c);
-            if (typeof(TComponent) == typeof(Collider))
-                foreach (var l in _listeners) l.Enter((Collider)(object)c);
+            foreach (var l in _listeners) l.Enter(c);
         }
-        void ColliderExit<TComponent>(TComponent c, HashSet<TComponent> set)
+        void ColliderExit<TComponent>(TComponent c, HashSet<TComponent> set) where TComponent : Component
         {
             set?.Remove(c);
             if (typeof(TComponent) == typeof(Collider))
-                foreach (var l in _listeners) l.Exit((Collider)(object)c);
+            foreach (var l in _listeners) l.Exit(c);
         }
     }
 }

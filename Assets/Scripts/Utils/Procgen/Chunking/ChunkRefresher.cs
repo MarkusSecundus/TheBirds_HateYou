@@ -1,4 +1,5 @@
-﻿using MarkusSecundus.Utils.Primitives;
+﻿using MarkusSecundus.Utils.Extensions;
+using MarkusSecundus.Utils.Primitives;
 using System.Collections;
 using UnityEngine;
 
@@ -23,6 +24,9 @@ namespace MarkusSecundus.Utils.Procgen.Chunking
         }
         public void RefreshChunks()
         {
+            if (ChunkSystem.IsNil() || !ChunkSystem.isActiveAndEnabled)
+                return;
+
             var chunkCoords = ChunkSystem.WorldToChunkCoords(transform.position);
 
             for (int x = Window.Min.x; x <= Window.Max.x; ++x)

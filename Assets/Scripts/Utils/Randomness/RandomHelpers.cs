@@ -114,6 +114,12 @@ namespace MarkusSecundus.Utils.Randomness
         public static Vector2 NextVector2(this System.Random self, Vector2 min, Vector2 max)
             => new Vector2(self.NextFloat(min.x, max.x), self.NextFloat(min.y, max.y));
 
+        public static Vector2 NextUnitVector2(this System.Random self)
+        {
+            float angle = self.NextFloat(0f, Mathf.PI * 2f);
+            return new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+        }
+
         /// <summary>
         /// Generate random <see cref="Vector2"/>
         /// </summary>
