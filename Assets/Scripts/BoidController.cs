@@ -5,6 +5,7 @@ using MarkusSecundus.Utils.Randomness;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BoidController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class BoidController : MonoBehaviour
     ColliderActivityInfo<BoidController> _radarData = new ColliderActivityInfo<BoidController>(c=>(c as Collider2D)?.attachedRigidbody?.GetComponent<BoidController>());
 
     [SerializeField] Interval<float> _permittedSpeed = new Interval<float>(1f, 50f);
+    [SerializeField] float _maxSteeringForce = 100f;
 
     [SerializeField] float SeparationWeight;
     [SerializeField] AnimationCurve SeparationCurve = AnimationCurve.Linear(0f, 1f, 1f, 0f);
@@ -38,6 +40,8 @@ public class BoidController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _radar.RegisterListener(_radarData);
         _defaultDirection = _rand.NextUnitVector2();
+
+        _rb.velocity = _defaultDirection * _permittedSpeed.Average();
     }
 
     void Update()
@@ -76,20 +80,30 @@ public class BoidController : MonoBehaviour
         averageVelocity *= 1f / _radarData.Active.Count;
         centerOfFlock *= 1f / _radarData.Active.Count;
 
-        Vector2 alignmentVelocity = averageVelocity - _rb.velocity;
-        Vector2 cohesionVelocity = centerOfFlock - _rb.position;
+        Vector2 avoidanceVelocity = SteerTowards(separationVelocity);        
+        Vector2 alignmentVelocity = SteerTowards(averageVelocity);
+        Vector2 cohesionVelocity = SteerTowards(centerOfFlock);
 
-        separationVelocity *= SeparationWeight;
+        avoidanceVelocity *= SeparationWeight;
         alignmentVelocity *= AlignmentWeight;
         cohesionVelocity *= CohesionWeight;
 
-        Separation = separationVelocity;
+        Separation = avoidanceVelocity;
         Alignment = alignmentVelocity;
         Cohesion = cohesionVelocity;
 
-        Vector2 totalTargetVelocity = (separationVelocity + alignmentVelocity + cohesionVelocity);
-        Vector2 velocityDirection = (totalTargetVelocity - _rb.velocity).ClampMagnitude(_permittedSpeed.Min, _permittedSpeed.Max);
+        Vector2 totalTargetVelocity = (avoidanceVelocity + alignmentVelocity + cohesionVelocity);
+        Vector2 velocityDirection = totalTargetVelocity.ClampMagnitude(_permittedSpeed.Min, _permittedSpeed.Max);
 
         _rb.AddForce(velocityDirection);
+        //update rotation
+        float desiredRotation = Mathf.Atan2(_rb.velocity.y, _rb.velocity.x) * Mathf.Rad2Deg;        
+        transform.rotation = Quaternion.Euler(0, 0, desiredRotation);
+    }
+
+    Vector2 SteerTowards(Vector2 vector)
+    {
+        Vector2 vec = vector.normalized * _permittedSpeed.Max - _rb.velocity;
+        return Vector2.ClampMagnitude(vec, _maxSteeringForce);
     }
 }
