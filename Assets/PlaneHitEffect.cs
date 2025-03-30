@@ -32,11 +32,15 @@ public class PlaneHitEffect : MonoBehaviour
 
     const string _colorPropName = "Color";
 
+
+
     private void Start()
     {
         if(TextureObject == null) return;
 
         _planeMat = TextureObject.GetComponent<Renderer>().material;
+
+        GameEvents.PlayerHit += PlayHitEffect;
     }
 
     public void PlayHitEffect()
