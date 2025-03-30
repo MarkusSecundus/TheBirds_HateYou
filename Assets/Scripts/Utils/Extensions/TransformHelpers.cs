@@ -114,5 +114,13 @@ namespace MarkusSecundus.Utils.Extensions
             return ret;
         }
 
+        public static void ScaleAroundPoint(this Transform self, Vector3 newLocalScale, Vector3 pointWorldspace)
+        {
+            var pointLocal = self.GlobalToLocal(pointWorldspace);
+            self.localScale = newLocalScale;
+            var pointNewWorldspace = self.LocalToGlobal(pointLocal);
+            var shift = pointNewWorldspace - pointWorldspace;
+            self.position -= shift;
+        }
     }
 }

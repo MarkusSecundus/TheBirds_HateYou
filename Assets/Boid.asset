@@ -51,7 +51,7 @@ MonoBehaviour:
     Min: 10
     Max: 28
   VelocityApplicationCap: 10
-  BoidBehaviorWeight: 0.543
+  BoidBehaviorWeight: 0.722
   SeparationWeight: 1.9
   SeparationDistance: 5.99
   SeparationCurve:
@@ -87,7 +87,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  AlignmentWeight: 0.43
+  AlignmentWeight: 0.23
   AlignmentDistance: 15
   AlignmentCurve:
     serializedVersion: 2

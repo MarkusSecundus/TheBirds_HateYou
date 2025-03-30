@@ -25,8 +25,8 @@ namespace Assets.Scripts.DamageSystem
             if (armorPiece.IsNil()) return;
 
             var attackDeclaration = new AttackDeclaration { Attacker = this, Damage = Damage, Type = DamageType };
-            OnAttacked?.Invoke(attackDeclaration, armorPiece);
             armorPiece.Attack(attackDeclaration);
+            OnAttacked?.Invoke(attackDeclaration, armorPiece);
         }
     }
 }

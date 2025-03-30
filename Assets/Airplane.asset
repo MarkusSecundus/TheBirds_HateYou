@@ -15,7 +15,7 @@ MonoBehaviour:
   VelocityRange:
     Min: 8
     Max: 30
-  VelocityChangePerSecond: 70
-  RotationChangePerSeconds_degrees: 80
-  VelocityApplicationCap: 60
+  VelocityChangePerSecond: 100
+  RotationChangePerSeconds_degrees: 50
+  VelocityApplicationCap: 90
   RotationApplicationCap: 70

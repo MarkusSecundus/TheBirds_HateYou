@@ -15,6 +15,8 @@ public class Damageable : MonoBehaviour
 
     [field: SerializeField]public float HP { get; private set; }
 
+    public float HpRatio => HP / MaxHP;
+
     [SerializeField] public UnityEvent<HealthChangeInfo> OnUpdate;
     [SerializeField] public UnityEvent<HealthChangeInfo> OnDamaged;
     [SerializeField] public UnityEvent<HealthChangeInfo> OnHealed;

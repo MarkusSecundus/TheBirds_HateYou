@@ -299,6 +299,7 @@ MonoBehaviour:
   _radar: {fileID: 3778703757093970293}
   cfg: {fileID: 11400000, guid: fe3f509f0fec40445ad2c43d9c6a9df0, type: 2}
   _enemyPursueFactor: 0
+  _deathVFX: {fileID: 168971495660658207, guid: 82df3b2f6940bcd49ae7255475cc17a9, type: 3}
 --- !u!1 &1360900704531831627
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,6 +313,7 @@ GameObject:
   - component: {fileID: 7229666275905862716}
   - component: {fileID: 2832644186015767545}
   - component: {fileID: 1582146050210309813}
+  - component: {fileID: 7461481546676992774}
   m_Layer: 0
   m_Name: BirdSpritesheet
   m_TagString: Untagged
@@ -458,6 +460,35 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.48
+--- !u!114 &7461481546676992774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360900704531831627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32949e8ff5351c409b0b1f48a7bc465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 3
+  DamageType: 2
+  OnAttacked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4842617547046404790}
+        m_TargetAssemblyTypeName: BoidController, Assembly-CSharp
+        m_MethodName: DoDie
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8136862077525606387
 GameObject:
   m_ObjectHideFlags: 0

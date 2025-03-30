@@ -1,8 +1,13 @@
+using MarkusSecundus.Utils;
 using MarkusSecundus.Utils.Extensions;
 using MarkusSecundus.Utils.Primitives;
+using MarkusSecundus.Utils.Serialization;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class AirplaneController : MonoBehaviour
 {
@@ -45,7 +50,8 @@ public class AirplaneController : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _rb.centerOfMass = transform.localPosition;
+        _rb.centerOfMass = Vector3.zero;// transform.localPosition;
+        _rb.inertia = 1;
 
         _lastRotation = _rb.rotation;
         _currentEnginePower = cfg.VelocityRange.Average();
@@ -57,6 +63,7 @@ public class AirplaneController : MonoBehaviour
     {
         ReadInput();
         UpdateModel();
+        UpdateHeight(Time.deltaTime);
 
         _tempThrottleUI.Slider.value = Mathf.Lerp(_tempThrottleUI.Slider.value, 1 - (_currentEnginePower - cfg.VelocityRange.Min) / (cfg.VelocityRange.Max - cfg.VelocityRange.Min), 0.9f);
     }
@@ -64,6 +71,78 @@ public class AirplaneController : MonoBehaviour
     private void FixedUpdate()
     {
         EvaluateForces();
+    }
+
+
+
+    [SerializeField]
+    SerializableDictionary<float, UnityEvent> _actionsOnHealthDrop;
+    [SerializeField]
+    SerializableDictionary<float, UnityEvent> _actionsOnHeightDrop;
+
+
+    [SerializeField] AnimationCurve DamageToHeightLossMapping;
+    public float MaxHeightLoss = 20f;
+
+    [SerializeField] float _heightLossRate = 0.5f;
+
+    
+    public float CurrentHeight = 20000;
+
+    public void HandleDamageChange(Damageable.HealthChangeInfo info)
+    {
+        return;
+        _heightLossRate = DamageToHeightLossMapping.Evaluate(1f - info.Damageable.HpRatio) * MaxHeightLoss;
+        var (originalHpRatio, hpRatio) = (info.OriginalHP / info.Damageable.MaxHP, info.ResultHP / info.Damageable.MaxHP);
+        foreach(var (actionRatio, action) in _actionsOnHealthDrop.Values)
+        {
+            if (hpRatio <= actionRatio && actionRatio < originalHpRatio)
+                action?.Invoke();
+        }
+    }
+
+
+    [System.Serializable]
+    public struct HeightLayer
+    {
+        public Transform Root;
+        public ParallaxEffect Parallax;
+        public float MinHeight;
+        public float FadeStartHeight;
+        public float MaxHeight;
+        public float MaxScale;
+        public Vector3 StartParallax;
+        public Vector3 EndParallax;
+    }
+    public HeightLayer[] HeightLayers;
+
+    void UpdateHeight(float delta)
+    {
+        CurrentHeight -= _heightLossRate * delta;
+        foreach(var layer in HeightLayers)
+        {
+            if (layer.Root.IsNil() || !layer.Root.gameObject.activeInHierarchy) continue;
+            if (CurrentHeight >= layer.MaxHeight) continue;
+            if(CurrentHeight < layer.MinHeight)
+            {
+                layer.Root.gameObject.SetActive(false);
+                continue;
+            }
+
+            float fadeRatio = (CurrentHeight - layer.MinHeight) / (layer.FadeStartHeight - layer.MinHeight);
+            foreach(var rnd in layer.Root.GetComponentsInChildren<RawImage>())
+            {
+                rnd.color = rnd.color.WithAlpha(fadeRatio);
+            }
+
+            float scaleRatio = (CurrentHeight - layer.MinHeight) / (layer.MaxHeight - layer.MinHeight);
+            float scale = Mathf.Lerp(layer.MaxScale, 1f, scaleRatio);
+            layer.Root.ScaleAroundPoint(new Vector3(scale, scale, 1f), this.transform.position);
+            if (layer.Parallax.IsNotNil())
+            {
+                layer.Parallax.MovementSpeed = Vector3.Lerp(layer.StartParallax, layer.EndParallax, scaleRatio);
+            }
+        }
     }
 
 

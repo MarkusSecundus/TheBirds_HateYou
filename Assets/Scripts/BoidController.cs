@@ -1,4 +1,5 @@
 using Cinemachine.Utility;
+using DG.Tweening;
 using MarkusSecundus.Utils.Behaviors.Automatization;
 using MarkusSecundus.Utils.Behaviors.GameObjects;
 using MarkusSecundus.Utils.Datastructs;
@@ -20,10 +21,30 @@ public class BoidController : MonoBehaviour, IRandomizer
     
     [SerializeField] float _enemyPursueFactor;
 
+    [SerializeField] GameObject _deathVFX;
+
     ColliderActivityInfo<BoidController> _radarData = new ColliderActivityInfo<BoidController>(c=>(c as Collider2D)?.attachedRigidbody?.GetComponent<BoidController>());
       
 
     Rigidbody2D _rb;
+
+
+
+    public void DoDie()
+    {
+
+        Rigidbody2D bRb = GetComponentInParent<Rigidbody2D>();
+        // spawn boid death vfx
+        GameObject vfxObject = Instantiate(_deathVFX, this.transform.position, this.transform.rotation);
+        Vector3 rbVelocity = new Vector3(this.LastVelocity.x, this.LastVelocity.y, 0f);
+        vfxObject.transform.DOMove(vfxObject.transform.position + rbVelocity, 1.5f).SetEase(Ease.OutSine);
+        //boid.Model.gameObject.SetActive(false);
+        //boid.Model.GetComponent<Collider2D>().enabled = false;
+        //boid.enabled = false;
+        //Destroy(boid.gameObject, 2f); 
+
+        Destroy(gameObject);
+    }
 
     private void Start()
     {

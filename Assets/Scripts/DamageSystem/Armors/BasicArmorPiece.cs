@@ -21,6 +21,9 @@ namespace Assets.Scripts.DamageSystem
 
         [SerializeField] UnityEvent<AttackDeclaration> OnAttacked;
 
+        public float MinTimeBetweenAttacks = 0.5f;
+
+        double _lastAttackTimestamp = 0f;
         void Start()
         {
             Damageable = Damageable.Get(this);
@@ -28,6 +31,10 @@ namespace Assets.Scripts.DamageSystem
 
         public void Attack(AttackDeclaration attackDeclaration)
         {
+            if (Time.timeAsDouble < _lastAttackTimestamp + MinTimeBetweenAttacks)
+                return;
+            _lastAttackTimestamp = Time.timeAsDouble;
+
             float damageMultiplier = DamageModifiers.Values.GetValueOrDefault(attackDeclaration.Type, this.DamageMultiplier);
             float damage = attackDeclaration.Damage * damageMultiplier;
 

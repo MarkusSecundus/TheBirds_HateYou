@@ -385,6 +385,7 @@ namespace MarkusSecundus.Utils.Primitives
             };
             return new Color(FieldValue(r, self.r), FieldValue(g, self.g), FieldValue(b, self.b), FieldValue(a, self.a));
         }
+        public static Color WithAlpha(this Color self, float alpha) => new Color(self.r, self.g, self.b, alpha);
 
         public static Vector3 With(this Vector3 self, Vector3SerializableSwizzle swizzle) => self.With(x: new VectorField(swizzle.X),y: new VectorField(swizzle.Y),z: new VectorField(swizzle.Z));
 
