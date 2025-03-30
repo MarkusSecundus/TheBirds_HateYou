@@ -21,19 +21,19 @@ namespace MarkusSecundus.Utils.Behaviors.Actions
         /// Whether the time should start on the Start() signal
         /// </summary>
         public bool OnStartup = false;
+        public float StartupDelay = 0f;
 
         // Start is called before the first frame update
         void Start()
         {
-            if (OnStartup) StartTimer();
+            if (OnStartup) this.InvokeWithDelay(StartTimer, StartupDelay);
         }
 
         /// <summary>
         /// Start the timer manully
         /// </summary>
-        public void StartTimer()
-        {
-            this.InvokeWithDelay(ToRun.Invoke, DelaySeconds);
-        }
+        public void StartTimer() => StartTimer(DelaySeconds);
+
+        public void StartTimer(float delay) => this.InvokeWithDelay(ToRun.Invoke, delay);
     }
 }

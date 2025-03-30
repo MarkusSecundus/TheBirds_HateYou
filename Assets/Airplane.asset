@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 0f740f0a8f140a04f89eeed7cae11759, type: 3}
   m_Name: Airplane
   m_EditorClassIdentifier: Assembly-CSharp::AirplaneConfig
   VelocityRange:
     Min: 10
     Max: 30
   VelocityChangePerSecond: 70
-  RotationChangePerSeconds_degrees: 40
+  RotationChangePerSeconds_degrees: 50
   VelocityApplicationCap: 30
-  RotationApplicationCap: 60
+  RotationApplicationCap: 30
