@@ -10,22 +10,26 @@ public class AirplaneController : MonoBehaviour
 
 
     float _currentEnginePower = 0f;
-    float _desiredRotation;
+
+    const float MAX_DESIRED_ROTATION_CHANGE = 120f;
+    float _desiredRotationChange = 0f;
 
     Rigidbody2D _rb;
 
     [SerializeField] TempThrottleUI _tempThrottleUI;
 
 
-
-    void EvaluateForces(float speedChange, float rotationChange)
+    float _lastRotation;
+    void EvaluateForces(float speedInput, float rotationInput)
     {
-        _currentEnginePower = (_currentEnginePower + speedChange * Time.deltaTime).Clamp(cfg.VelocityRange);
+        _currentEnginePower = (_currentEnginePower + speedInput * Time.deltaTime).Clamp(cfg.VelocityRange);
         Vector2 desiredVelocity = transform.up * _currentEnginePower;
 
-        _desiredRotation = (_desiredRotation + rotationChange * Time.deltaTime);
-        float neededRotationChange = _desiredRotation - _rb.rotation;
-        float desiredTorque = (neededRotationChange - _rb.angularVelocity).DegreesNormalize();
+        _desiredRotationChange -= (_rb.rotation - _lastRotation).DegreesNormalize();
+        _lastRotation = _rb.rotation;
+
+        _desiredRotationChange = (_desiredRotationChange + rotationInput * Time.deltaTime).Clamp(-MAX_DESIRED_ROTATION_CHANGE, MAX_DESIRED_ROTATION_CHANGE);
+        float desiredTorque = (_desiredRotationChange - _rb.angularVelocity);
 
         _rb.AddForce((desiredVelocity - _rb.velocity).ClampMagnitude(0f, cfg.VelocityApplicationCap));
         _rb.AddTorque(desiredTorque.Clamp(-cfg.RotationApplicationCap, cfg.RotationApplicationCap));
@@ -36,7 +40,7 @@ public class AirplaneController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _rb.centerOfMass = transform.localPosition;
 
-        _desiredRotation = _rb.rotation;
+        _lastRotation = _rb.rotation;
         _currentEnginePower = cfg.VelocityRange.Average();
         _airplaneModel.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(transform.up.y, transform.up.x) * Mathf.Rad2Deg);
     }
