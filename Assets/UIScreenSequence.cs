@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class UIScreenSequence : MonoBehaviour
@@ -17,6 +18,7 @@ public class UIScreenSequence : MonoBehaviour
 
     [SerializeField] float screenBlinkDuration = 0.1f;
 
+    [SerializeField] UnityEvent OnSequenceFinished;
 
     private void Start()
     {
@@ -68,6 +70,7 @@ public class UIScreenSequence : MonoBehaviour
         {
             DOVirtual.DelayedCall(1f, () => Application.Quit());
         }
+        OnSequenceFinished?.Invoke();
     }
 
 

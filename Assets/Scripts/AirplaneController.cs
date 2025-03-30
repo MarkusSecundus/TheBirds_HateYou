@@ -27,6 +27,8 @@ public class AirplaneController : MonoBehaviour
 
     [SerializeField] TempThrottleUI _tempThrottleUI;
 
+    [SerializeField] UnityEvent OnZeroHeightReached;
+
 
     float _lastRotation;
     void EvaluateForces()
@@ -82,6 +84,7 @@ public class AirplaneController : MonoBehaviour
 
 
     [SerializeField] AnimationCurve DamageToHeightLossMapping;
+    public float MinHeightLoss = 20f;
     public float MaxHeightLoss = 20f;
 
     [SerializeField] float _heightLossRate = 0.5f;
@@ -91,8 +94,7 @@ public class AirplaneController : MonoBehaviour
 
     public void HandleDamageChange(Damageable.HealthChangeInfo info)
     {
-        return;
-        _heightLossRate = DamageToHeightLossMapping.Evaluate(1f - info.Damageable.HpRatio) * MaxHeightLoss;
+        _heightLossRate = MinHeightLoss + DamageToHeightLossMapping.Evaluate(1f - info.Damageable.HpRatio) * (MaxHeightLoss - MinHeightLoss);
         var (originalHpRatio, hpRatio) = (info.OriginalHP / info.Damageable.MaxHP, info.ResultHP / info.Damageable.MaxHP);
         foreach(var (actionRatio, action) in _actionsOnHealthDrop.Values)
         {
@@ -116,6 +118,7 @@ public class AirplaneController : MonoBehaviour
     }
     public HeightLayer[] HeightLayers;
 
+    bool _didLose = false;
     void UpdateHeight(float delta)
     {
         CurrentHeight -= _heightLossRate * delta;
@@ -142,6 +145,11 @@ public class AirplaneController : MonoBehaviour
             {
                 layer.Parallax.MovementSpeed = Vector3.Lerp(layer.StartParallax, layer.EndParallax, scaleRatio);
             }
+        }
+        if(CurrentHeight < 0f && !_didLose)
+        {
+            _didLose = true;
+            OnZeroHeightReached?.Invoke();
         }
     }
 
