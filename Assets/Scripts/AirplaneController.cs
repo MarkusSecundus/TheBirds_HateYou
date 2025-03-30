@@ -56,7 +56,6 @@ public class AirplaneController : MonoBehaviour
     void Update()
     {
         ReadInput();
-
         UpdateModel();
 
         _tempThrottleUI.Slider.value = 1 - (_currentEnginePower - cfg.VelocityRange.Min) / (cfg.VelocityRange.Max - cfg.VelocityRange.Min);
