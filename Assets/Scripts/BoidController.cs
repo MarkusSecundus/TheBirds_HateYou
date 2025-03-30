@@ -11,7 +11,9 @@ using UnityEngine;
 public class BoidController : MonoBehaviour, IRandomizer
 {
     [SerializeField] Transform _model;
+    public Transform Model => _model;
     [SerializeField] ColliderActivityTracker _radar;
+    public Vector2 LastVelocity { get; private set; }
 
     Rigidbody2D _enemy;
     [SerializeField] BoidConfig cfg;
@@ -19,8 +21,7 @@ public class BoidController : MonoBehaviour, IRandomizer
     [SerializeField] float _enemyPursueFactor;
 
     ColliderActivityInfo<BoidController> _radarData = new ColliderActivityInfo<BoidController>(c=>(c as Collider2D)?.attachedRigidbody?.GetComponent<BoidController>());
-
-
+      
 
     Rigidbody2D _rb;
 
@@ -31,7 +32,7 @@ public class BoidController : MonoBehaviour, IRandomizer
         _enemy = TagSearchable.FindByTag<Rigidbody2D>(cfg.EnemyTag);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if(_enemy.position.DistanceSqr(_rb.position) > cfg.DistanceToDie.Sqr())
         {
@@ -42,6 +43,8 @@ public class BoidController : MonoBehaviour, IRandomizer
         ApplySteering(Time.deltaTime);
 
         UpdateModel();
+
+        LastVelocity = _rb.velocity;
     }
 
     void ApplySteering(float delta)
