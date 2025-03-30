@@ -6,13 +6,14 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] float _timeToLive;
+    [SerializeField] LayerMask _boidLayerMask;
 
     float _velocity;
     Rigidbody2D _rb;
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _rb.velocity = transform.up * _velocity;
+        _rb.velocity = transform.right * _velocity;
     }
     // Start is called before the first frame update
     public void Initialise(float velocity)
@@ -24,6 +25,22 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log($"Collision with {collision.gameObject.name}");
-        Destroy(gameObject);
+        if (LayerContains(collision.gameObject.layer, _boidLayerMask))
+        {
+            Rigidbody2D bRb = collision.gameObject.GetComponentInParent<Rigidbody2D>();
+            // spawn boid death vfx
+            Destroy(bRb.gameObject);
+            Destroy(gameObject);
+        }
+       
+        
     }
+
+    bool LayerContains(int queryLayer, LayerMask mask)
+    {
+        if ((mask.value & (1 << queryLayer)) > 0) return true;
+        return false;
+    }
+
+
 }

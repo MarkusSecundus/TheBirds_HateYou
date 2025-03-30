@@ -18,4 +18,4 @@ MonoBehaviour:
   VelocityChangePerSecond: 70
   RotationChangePerSeconds_degrees: 40
   VelocityApplicationCap: 30
-  RotationApplicationCap: 180
+  RotationApplicationCap: 60
