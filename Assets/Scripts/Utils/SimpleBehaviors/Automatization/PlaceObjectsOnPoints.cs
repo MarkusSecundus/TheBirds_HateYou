@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using MarkusSecundus.Utils.Primitives;
 
 
 namespace MarkusSecundus.Utils.Behaviors.Automatization
@@ -29,6 +30,8 @@ namespace MarkusSecundus.Utils.Behaviors.Automatization
         public Transform ParentToFill;
 
         public int ChildrenCount => ParentToFill.transform.childCount;
+
+        public Interval<int> GroupSize = new Interval<int>(1, 4);
 
         /// <summary>
         /// Prototype of the spawned object
@@ -71,19 +74,26 @@ namespace MarkusSecundus.Utils.Behaviors.Automatization
         }
         private void PlaceObjects(IEnumerable<Vector3> points, bool shouldClear = false)
         {
+            //temp
+            GroupSize = new Interval<int>(1, 4);
+
             if (MaxChildrenInExistence >= 0 && ChildrenCount >= MaxChildrenInExistence) return;
 
             var random = new System.Random(RealSeed);
 
             foreach (var v in points)
             {
-                if (MaxChildrenInExistence >= 0 && ChildrenCount >= MaxChildrenInExistence) break;
-                var obj = ToPlace.InstantiateWithTransform();
-                obj.transform.position = v + ToPlace.transform.localPosition;
-                obj.transform.SetParent(ParentToFill);
-                obj.SetActive(true);
-                foreach (var randomizer in obj.GetComponentsInChildren<IRandomizer>())
-                    randomizer.Randomize(random);
+                int groupSize = Random.Range(GroupSize.Min, GroupSize.Max);
+                for(int i = 0; i < groupSize; i++)
+                {
+                    if (MaxChildrenInExistence >= 0 && ChildrenCount >= MaxChildrenInExistence) break;
+                    var obj = ToPlace.InstantiateWithTransform();
+                    obj.transform.position = v + ToPlace.transform.localPosition;
+                    obj.transform.SetParent(ParentToFill);
+                    obj.SetActive(true);
+                    foreach (var randomizer in obj.GetComponentsInChildren<IRandomizer>())
+                        randomizer.Randomize(random);
+                }
             }
         }
 

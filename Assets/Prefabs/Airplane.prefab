@@ -435,6 +435,9 @@ MonoBehaviour:
   SpawnLocation: {fileID: 132922408641826108}
   MaxChildrenInExistence: 60
   ParentToFill: {fileID: 5624810557137879926}
+  GroupSize:
+    Min: 1
+    Max: 4
   ToPlace: {fileID: 721675864841403625, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
   Seed: 0
   RandomSeed: 1
@@ -1007,6 +1010,24 @@ MonoBehaviour:
   _tiltRate: 1
   _maxTiltAngle: 35
   _tempThrottleUI: {fileID: 0}
+  OnZeroHeightReached:
+    m_PersistentCalls:
+      m_Calls: []
+  _actionsOnHealthDrop:
+    values: []
+  _actionsOnHeightDrop:
+    values: []
+  DamageToHeightLossMapping:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  MinHeightLoss: 20
+  MaxHeightLoss: 20
+  _heightLossRate: 0.5
+  CurrentHeight: 20000
+  HeightLayers: []
   _airplaneModel: {fileID: 7175281399952122273}
   _airplaneTiltNode: {fileID: 3480481310202586512}
   modelUp: {x: 1, y: 0, z: 0}
@@ -1141,7 +1162,19 @@ MonoBehaviour:
     values: []
   OnAttacked:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4711140910786233613}
+        m_TargetAssemblyTypeName: PlaneHitEffect, Assembly-CSharp
+        m_MethodName: PlayHitEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   MinTimeBetweenAttacks: 0.5
 --- !u!61 &960324266569517489
 BoxCollider2D:
