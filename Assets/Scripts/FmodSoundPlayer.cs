@@ -173,6 +173,7 @@ public class FmodSoundPlayer : MonoBehaviour
 
     bool _tryParseParameterCommand(string nameAndValue, out string name, out float value,[System.Runtime.CompilerServices.CallerMemberName] string callerName = "<dummy>")
     {
+        Debug.Log($"{callerName}({nameAndValue})", this);
         var ret = nameAndValue.Split(" ");
         if (ret.Length != 2 || !float.TryParse(ret[1], out value))
         {

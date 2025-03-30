@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnLocation: {fileID: 132922408641826108}
-  MaxChildrenInExistence: 60
+  MaxChildrenInExistence: 40
   ParentToFill: {fileID: 5624810557137879926}
   ToPlace: {fileID: 721675864841403625, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
   Seed: 0
@@ -933,13 +933,14 @@ GameObject:
   - component: {fileID: 6516599233793002372}
   - component: {fileID: 960324266569517489}
   - component: {fileID: 4375962569638914685}
+  - component: {fileID: 6959025285788975412}
   m_Layer: 6
   m_Name: Airplane
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5932949172515028
 Transform:
   m_ObjectHideFlags: 0
@@ -1007,6 +1008,208 @@ MonoBehaviour:
   _tiltRate: 1
   _maxTiltAngle: 35
   _tempThrottleUI: {fileID: 0}
+  OnZeroHeightReached:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UIScreenSequence, Assembly-CSharp
+        m_MethodName: StartSequence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: FmodSoundPlayer, Assembly-CSharp
+        m_MethodName: SetGlobalParameter
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Intensity 0
+          m_BoolArgument: 0
+        m_CallState: 2
+  _actionsOnHealthDrop:
+    values:
+    - key: 0.99
+      value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: FmodSoundPlayer, Assembly-CSharp
+            m_MethodName: SetGlobalParameter
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Intensity 1
+              m_BoolArgument: 0
+            m_CallState: 2
+    - key: 0.8
+      value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: FmodSoundPlayer, Assembly-CSharp
+            m_MethodName: SetGlobalParameter
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Intensity 2
+              m_BoolArgument: 0
+            m_CallState: 2
+    - key: 0.6
+      value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: FmodSoundPlayer, Assembly-CSharp
+            m_MethodName: SetGlobalParameter
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Intensity 3
+              m_BoolArgument: 0
+            m_CallState: 2
+    - key: 0.4
+      value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: FmodSoundPlayer, Assembly-CSharp
+            m_MethodName: SetGlobalParameter
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Intensity 4
+              m_BoolArgument: 0
+            m_CallState: 2
+    - key: 0.2
+      value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: FmodSoundPlayer, Assembly-CSharp
+            m_MethodName: SetGlobalParameter
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Intensity 5
+              m_BoolArgument: 0
+            m_CallState: 2
+  _actionsOnHeightDrop:
+    values: []
+  DamageToHeightLossMapping:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.31713742
+      value: 0.50727534
+      inSlope: 0.52548033
+      outSlope: 0.52548033
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.0505474
+      outWeight: 0.13425161
+    - serializedVersion: 3
+      time: 0.7697246
+      value: 0.7996919
+      inSlope: 3.055546
+      outSlope: 3.055546
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.062163148
+      outWeight: 0.0937816
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.7345487
+      outSlope: 0.7345487
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.083283246
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  MinHeightLoss: 40
+  MaxHeightLoss: 300
+  _heightLossRate: 40
+  CurrentHeight: 22000
+  HeightUI:
+    Label: {fileID: 0}
+    Slider: {fileID: 0}
+    HeightLossLabel: {fileID: 0}
+  HeightLayers:
+  - Root: {fileID: 0}
+    Parallax: {fileID: 0}
+    MinHeight: 20000
+    FadeStartHeight: 21900
+    MaxHeight: 25000
+    MaxScale: 1.1
+    StartParallax: {x: 0.95, y: 0.95, z: 0}
+    EndParallax: {x: 1, y: 1, z: 0}
+  - Root: {fileID: 0}
+    Parallax: {fileID: 0}
+    MinHeight: 14000
+    FadeStartHeight: 18000
+    MaxHeight: 20000
+    MaxScale: 1.1
+    StartParallax: {x: 0.9, y: 0.9, z: 0}
+    EndParallax: {x: 0.6, y: 0.6, z: 0}
+  - Root: {fileID: 0}
+    Parallax: {fileID: 0}
+    MinHeight: 10000
+    FadeStartHeight: 14000
+    MaxHeight: 20000
+    MaxScale: 2
+    StartParallax: {x: 0, y: 0, z: 0}
+    EndParallax: {x: 0, y: 0, z: 0}
+  - Root: {fileID: 0}
+    Parallax: {fileID: 0}
+    MinHeight: 0
+    FadeStartHeight: 1
+    MaxHeight: 14000
+    MaxScale: 4
+    StartParallax: {x: 0.9, y: 0.9, z: 0}
+    EndParallax: {x: 0.4, y: 0.4, z: 0}
+  - Root: {fileID: 0}
+    Parallax: {fileID: 0}
+    MinHeight: 8000
+    FadeStartHeight: 11000
+    MaxHeight: 15000
+    MaxScale: 2
+    StartParallax: {x: 0.9, y: 0.9, z: 0}
+    EndParallax: {x: 0.7, y: 0.7, z: 0}
   _airplaneModel: {fileID: 7175281399952122273}
   _airplaneTiltNode: {fileID: 3480481310202586512}
   modelUp: {x: 1, y: 0, z: 0}
@@ -1114,7 +1317,19 @@ MonoBehaviour:
       m_Calls: []
   OnDamaged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1306489296725914839}
+        m_TargetAssemblyTypeName: AirplaneController, Assembly-CSharp
+        m_MethodName: HandleDamageChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnHealed:
     m_PersistentCalls:
       m_Calls: []
@@ -1233,6 +1448,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7697383, y: 4.49189}
   m_EdgeRadius: 0
+--- !u!114 &6959025285788975412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5718573244633817498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a41c19a6195e30447bacc953c7c31a08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RefreshFrequency_seconds: 1
+  ChunkSystem: {fileID: 0}
+  Window:
+    Min: {x: -2, y: -2, z: 0}
+    Max: {x: 2, y: 2, z: 0}
 --- !u!1 &6460894066826916892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,6 +2210,10 @@ PrefabInstance:
     - target: {fileID: 1241128485323995004, guid: 4a6b2ee91fdded04ea6ef10b1891dace, type: 3}
       propertyPath: _burstDelayDuration.Min
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796670531464701773, guid: 4a6b2ee91fdded04ea6ef10b1891dace, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4801488399239065459, guid: 4a6b2ee91fdded04ea6ef10b1891dace, type: 3}
       propertyPath: m_Name

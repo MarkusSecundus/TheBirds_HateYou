@@ -5,6 +5,7 @@ using MarkusSecundus.Utils.Serialization;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design.Serialization;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -49,8 +50,11 @@ public class AirplaneController : MonoBehaviour
         rotationInput = 0f;
     }
 
+    float StartHeight;
+
     void Start()
     {
+        StartHeight = CurrentHeight;
         _rb = GetComponent<Rigidbody2D>();
         _rb.centerOfMass = Vector3.zero;// transform.localPosition;
         _rb.inertia = 1;
@@ -85,7 +89,7 @@ public class AirplaneController : MonoBehaviour
 
     [SerializeField] AnimationCurve DamageToHeightLossMapping;
     public float MinHeightLoss = 20f;
-    public float MaxHeightLoss = 20f;
+    public float MaxHeightLoss = 300f;
 
     [SerializeField] float _heightLossRate = 0.5f;
 
@@ -95,13 +99,23 @@ public class AirplaneController : MonoBehaviour
     public void HandleDamageChange(Damageable.HealthChangeInfo info)
     {
         _heightLossRate = MinHeightLoss + DamageToHeightLossMapping.Evaluate(1f - info.Damageable.HpRatio) * (MaxHeightLoss - MinHeightLoss);
+
         var (originalHpRatio, hpRatio) = (info.OriginalHP / info.Damageable.MaxHP, info.ResultHP / info.Damageable.MaxHP);
         foreach(var (actionRatio, action) in _actionsOnHealthDrop.Values)
         {
-            if (hpRatio <= actionRatio && actionRatio < originalHpRatio)
+            if (hpRatio <= actionRatio && actionRatio <= originalHpRatio)
                 action?.Invoke();
         }
     }
+
+    [System.Serializable]
+    public struct HeightUIInfo
+    {
+        public TMP_Text Label;
+        public Slider Slider;
+        public TMP_Text HeightLossLabel;
+    }
+    public HeightUIInfo HeightUI;
 
 
     [System.Serializable]
@@ -122,7 +136,15 @@ public class AirplaneController : MonoBehaviour
     void UpdateHeight(float delta)
     {
         CurrentHeight -= _heightLossRate * delta;
-        foreach(var layer in HeightLayers)
+
+
+        {
+            HeightUI.Slider.value = (CurrentHeight / StartHeight).Clamp01();
+            HeightUI.Label.text = $"{(CurrentHeight * 0.001f):0.00} km";
+            HeightUI.HeightLossLabel.text = $"Height loss: {_heightLossRate:0.0} m/s";
+        }
+
+        foreach (var layer in HeightLayers)
         {
             if (layer.Root.IsNil() || !layer.Root.gameObject.activeInHierarchy) continue;
             if (CurrentHeight >= layer.MaxHeight) continue;
@@ -151,6 +173,7 @@ public class AirplaneController : MonoBehaviour
             _didLose = true;
             OnZeroHeightReached?.Invoke();
         }
+
     }
 
 
