@@ -764,7 +764,7 @@ Transform:
   m_GameObject: {fileID: 4463233547614984986}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1009,6 +1009,7 @@ MonoBehaviour:
   _wingTipTrails:
   - {fileID: 3541508854324443171}
   - {fileID: 6433302777844071415}
+  _wingTrailEmissionThreshold: 0.35
 --- !u!114 &4469137117346887092
 MonoBehaviour:
   m_ObjectHideFlags: 0

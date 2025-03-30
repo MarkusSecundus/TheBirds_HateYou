@@ -905,10 +905,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1812159706}
     - target: {fileID: 1306489296725914839, guid: 23dda4e9b947db14a86206e886c77085, type: 3}
-      propertyPath: SimplifiedModel
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1306489296725914839, guid: 23dda4e9b947db14a86206e886c77085, type: 3}
       propertyPath: _tempThrottleUI
       value: 
       objectReference: {fileID: 1284299020}
@@ -923,10 +919,6 @@ PrefabInstance:
     - target: {fileID: 5718573244633817498, guid: 23dda4e9b947db14a86206e886c77085, type: 3}
       propertyPath: m_Name
       value: Airplane
-      objectReference: {fileID: 0}
-    - target: {fileID: 8721920489953128361, guid: 23dda4e9b947db14a86206e886c77085, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2698,7 +2690,7 @@ MonoBehaviour:
   <ChunkDimensions>k__BackingField: {x: 100, y: 100, z: 0}
   <ChunkPrefab>k__BackingField: {fileID: 640067942}
   _seed: 8
-  _chunkTimeToLive_seconds: 0
+  _chunkTimeToLive_seconds: 20
 --- !u!114 &1812159707
 MonoBehaviour:
   m_ObjectHideFlags: 0
