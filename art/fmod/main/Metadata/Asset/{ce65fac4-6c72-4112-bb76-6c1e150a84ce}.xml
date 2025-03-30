@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="EncodableAsset" id="{ce65fac4-6c72-4112-bb76-6c1e150a84ce}">
+		<property name="assetPath">
+			<value>Music/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0bdc5649-3660-4c15-9922-556e6290c728}</destination>
+		</relationship>
+	</object>
+</objects>
