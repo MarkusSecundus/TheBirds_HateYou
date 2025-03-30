@@ -28,6 +28,8 @@ public class MachinegunController : MonoBehaviour
         {
             _fireCooldowns[i] -= Time.deltaTime;            
         }
+        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
+            FireInput();
     }
 
     public void FireInput()

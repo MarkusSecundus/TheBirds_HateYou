@@ -19,6 +19,6 @@ public class Machinegun : MonoBehaviour
 
     private void Start()
     {
-        DOVirtual.DelayedCall(0.25f, () => { Fire(_bulletSpawnPoint.right * 10f); }).SetLoops(-1);
+        //DOVirtual.DelayedCall(0.25f, () => { Fire(_bulletSpawnPoint.right * 10f); }).SetLoops(-1);
     }
 }

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Airplane
   m_EditorClassIdentifier: Assembly-CSharp::AirplaneConfig
   VelocityRange:
-    Min: 10
+    Min: 8
     Max: 30
   VelocityChangePerSecond: 70
-  RotationChangePerSeconds_degrees: 40
-  VelocityApplicationCap: 30
-  RotationApplicationCap: 90
+  RotationChangePerSeconds_degrees: 80
+  VelocityApplicationCap: 60
+  RotationApplicationCap: 70
