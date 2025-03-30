@@ -20,19 +20,22 @@ public class AirplaneController : MonoBehaviour
 
 
     float _lastRotation;
-    void EvaluateForces(float speedInput, float rotationInput)
+    void EvaluateForces()
     {
-        _currentEnginePower = (_currentEnginePower + speedInput * Time.deltaTime).Clamp(cfg.VelocityRange);
+        _currentEnginePower = (_currentEnginePower + speedInput).Clamp(cfg.VelocityRange);
         Vector2 desiredVelocity = transform.up * _currentEnginePower;
 
         _desiredRotationChange -= (_rb.rotation - _lastRotation).DegreesNormalize();
         _lastRotation = _rb.rotation;
 
-        _desiredRotationChange = (_desiredRotationChange + rotationInput * Time.deltaTime).Clamp(-MAX_DESIRED_ROTATION_CHANGE, MAX_DESIRED_ROTATION_CHANGE);
+        _desiredRotationChange = (_desiredRotationChange + rotationInput).Clamp(-MAX_DESIRED_ROTATION_CHANGE, MAX_DESIRED_ROTATION_CHANGE);
         float desiredTorque = (_desiredRotationChange - _rb.angularVelocity);
 
         _rb.AddForce((desiredVelocity - _rb.velocity).ClampMagnitude(0f, cfg.VelocityApplicationCap));
         _rb.AddTorque(desiredTorque.Clamp(-cfg.RotationApplicationCap, cfg.RotationApplicationCap));
+
+        speedInput = 0f;
+        rotationInput = 0f;
     }
 
     void Start()
@@ -45,14 +48,19 @@ public class AirplaneController : MonoBehaviour
         _airplaneModel.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(transform.up.y, transform.up.x) * Mathf.Rad2Deg);
     }
 
+    float speedInput = 0f, rotationInput = 0f;
     void Update()
     {
-        GetInput(out float enginePowerDelta, out float rotationDelta);
-        EvaluateForces(enginePowerDelta, rotationDelta);
+        ReadInput();
 
         UpdateModel();
 
         _tempThrottleUI.Slider.value = 1 - (_currentEnginePower - cfg.VelocityRange.Min) / (cfg.VelocityRange.Max - cfg.VelocityRange.Min);
+    }
+
+    private void FixedUpdate()
+    {
+        EvaluateForces();
     }
 
 
@@ -69,18 +77,15 @@ public class AirplaneController : MonoBehaviour
     }
 
 
-    void GetInput(out float enginePowerDelta, out float rotationDelta)
+    void ReadInput()
     {
-        enginePowerDelta = 0f;
-        rotationDelta = 0f;
-
         if (Input.GetKey(KeyCode.A))
-            rotationDelta += cfg.RotationChangePerSeconds_degrees;
+            rotationInput += cfg.RotationChangePerSeconds_degrees * Time.deltaTime;
         if (Input.GetKey(KeyCode.D))
-            rotationDelta -= cfg.RotationChangePerSeconds_degrees;
+            rotationInput -= cfg.RotationChangePerSeconds_degrees * Time.deltaTime;
         if (Input.GetKey(KeyCode.W))
-            enginePowerDelta += cfg.VelocityChangePerSecond;
+            speedInput += cfg.VelocityChangePerSecond * Time.deltaTime;
         if (Input.GetKey(KeyCode.S))
-            enginePowerDelta -= cfg.VelocityChangePerSecond;
+            speedInput -= cfg.VelocityChangePerSecond * Time.deltaTime;
     }
 }
