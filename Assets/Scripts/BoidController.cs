@@ -1,109 +1,127 @@
+using Cinemachine.Utility;
+using MarkusSecundus.Utils.Behaviors.Automatization;
+using MarkusSecundus.Utils.Behaviors.GameObjects;
 using MarkusSecundus.Utils.Datastructs;
+using MarkusSecundus.Utils.Extensions;
 using MarkusSecundus.Utils.Physics;
 using MarkusSecundus.Utils.Primitives;
 using MarkusSecundus.Utils.Randomness;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class BoidController : MonoBehaviour
+public class BoidController : MonoBehaviour, IRandomizer
 {
+    [SerializeField] Transform _model;
     [SerializeField] ColliderActivityTracker _radar;
+
+    Rigidbody2D _enemy;
+    [SerializeField] BoidConfig cfg;
+    
+    [SerializeField] float _enemyPursueFactor;
 
     ColliderActivityInfo<BoidController> _radarData = new ColliderActivityInfo<BoidController>(c=>(c as Collider2D)?.attachedRigidbody?.GetComponent<BoidController>());
 
-    [SerializeField] Interval<float> _permittedSpeed = new Interval<float>(1f, 50f);
-    [SerializeField] float _maxSteeringForce = 100f;
 
-    [SerializeField] float SeparationWeight;
-    [SerializeField] AnimationCurve SeparationCurve = AnimationCurve.Linear(0f, 1f, 1f, 0f);
-    [SerializeField] float AlignmentWeight;
-    [SerializeField] AnimationCurve AlignmentCurve = AnimationCurve.Linear(0f, 1f, 1f, 0f);
-    [SerializeField] float CohesionWeight;
-    [SerializeField] float _wanderThreshold = 1f;
-
-    [SerializeField] int NeighborsCount = 0;
-    [SerializeField] Vector2 Velocity;
-    [SerializeField] Vector2 Separation;
-    [SerializeField] Vector2 Alignment;
-    [SerializeField] Vector2 Cohesion;
 
     Rigidbody2D _rb;
-
-    static readonly System.Random _rand = new System.Random();
-
-    Vector2 _defaultDirection;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _radar.RegisterListener(_radarData);
-        _defaultDirection = _rand.NextUnitVector2();
-
-        _rb.velocity = _defaultDirection * _permittedSpeed.Average();
+        _enemy = TagSearchable.FindByTag<Rigidbody2D>(cfg.EnemyTag);
     }
 
     void Update()
     {
-        NeighborsCount = _radarData.Active.Count;
-        Velocity = _rb.velocity;
-        if (_radarData.Active.IsEmpty() || _rb.velocity.sqrMagnitude < _wanderThreshold.Sqr())
+        if(_enemy.position.DistanceSqr(_rb.position) > cfg.DistanceToDie.Sqr())
         {
-            var direction = _defaultDirection * _permittedSpeed.Average();
-            _rb.AddForce(direction - _rb.velocity);
+            Destroy(gameObject);
             return;
         }
 
+        ApplySteering(Time.deltaTime);
+
+        UpdateModel();
+    }
+
+    void ApplySteering(float delta)
+    {
+        float boidBehaviorWeight = ((1f - _enemyPursueFactor) + cfg.BoidBehaviorWeight).Clamp01();
+
+        Vector2 enemyPursueVelocity = (_enemy.position - _rb.position).normalized * cfg.VelocityRange.Max;
+        Vector2 enemyPursueVelocityDistance = (enemyPursueVelocity - _rb.velocity);
+
+
+        if (_radarData.Active.IsEmpty() || boidBehaviorWeight >= 0.95f)
+        {
+            _rb.AddForce(enemyPursueVelocityDistance.ClampMagnitude(0f, cfg.VelocityApplicationCap));
+            return;
+        }
+
+
+
+        float separationWeightSum = 0f;
+        float alignmentWeightSum = 0f;
+
         Vector2 separationVelocity = Vector2.zero;
         Vector2 averageVelocity = Vector2.zero;
-        Vector2 centerOfFlock = Vector2.zero;
-        
-        foreach(var neighbor in _radarData.Active)
+        Vector2 centerOfFlockRelative = Vector2.zero;
+
+        foreach (var neighbor in _radarData.Active)
         {
+            if (neighbor.IsNil()) continue;
+
             var directionToNeighbor = neighbor._rb.position - _rb.position;
             var directionToNeighborNormalized = directionToNeighbor.Normalized(out float distance);
             {
-                Vector2 newEntry = (-directionToNeighborNormalized) * SeparationCurve.Evaluate(distance);
-                separationVelocity += newEntry;
+                float weight = cfg.SeparationCurve.Evaluate(distance / cfg.SeparationDistance);
+                Vector2 toAdd = (-directionToNeighborNormalized) * weight;
+                separationWeightSum += weight;
+                separationVelocity += toAdd;
             }
             {
-                Vector2 newEntry = neighbor._rb.velocity * AlignmentCurve.Evaluate(distance);
-                averageVelocity += newEntry;
+                float weight = cfg.AlignmentCurve.Evaluate(distance / cfg.AlignmentDistance);
+                Vector2 toAdd = neighbor._rb.velocity * weight;
+                alignmentWeightSum += weight;
+                averageVelocity += toAdd;
             }
             {
-                centerOfFlock += neighbor._rb.position;
+                centerOfFlockRelative += directionToNeighbor;
             }
         }
 
-        separationVelocity *= 1f/_radarData.Active.Count;
-        averageVelocity *= 1f / _radarData.Active.Count;
-        centerOfFlock *= 1f / _radarData.Active.Count;
+        if (separationWeightSum > 0f) separationVelocity *= 1f / separationWeightSum;
+        if (alignmentWeightSum > 0f) averageVelocity *= 1f / alignmentWeightSum;
+        centerOfFlockRelative *= 1f / _radarData.Active.Count;
 
-        Vector2 avoidanceVelocity = SteerTowards(separationVelocity);        
-        Vector2 alignmentVelocity = SteerTowards(averageVelocity);
-        Vector2 cohesionVelocity = SteerTowards(centerOfFlock);
+        Vector2 desiredVelocity = averageVelocity.normalized * cfg.VelocityRange.Max;
+        Vector2 alignmentVelocity = (desiredVelocity - _rb.velocity).ClampMagnitude(cfg.VelocityRange);
+        Vector2 cohesionVelocity = centerOfFlockRelative;
 
-        avoidanceVelocity *= SeparationWeight;
-        alignmentVelocity *= AlignmentWeight;
-        cohesionVelocity *= CohesionWeight;
+        float boidWeightSumInv = 1f / (cfg.SeparationWeight + cfg.AlignmentWeight + cfg.CohesionWeight);
 
-        Separation = avoidanceVelocity;
-        Alignment = alignmentVelocity;
-        Cohesion = cohesionVelocity;
+        separationVelocity *= cfg.SeparationWeight * boidWeightSumInv;
+        alignmentVelocity *= cfg.AlignmentWeight * boidWeightSumInv;
+        cohesionVelocity *= cfg.CohesionWeight * boidWeightSumInv;
 
-        Vector2 totalTargetVelocity = (avoidanceVelocity + alignmentVelocity + cohesionVelocity);
-        Vector2 velocityDirection = totalTargetVelocity.ClampMagnitude(_permittedSpeed.Min, _permittedSpeed.Max);
+        Vector2 totalTargetVelocity = ((separationVelocity + alignmentVelocity + cohesionVelocity)).ClampMagnitude(cfg.VelocityRange);
 
-        _rb.AddForce(velocityDirection);
-        //update rotation
-        float desiredRotation = Mathf.Atan2(_rb.velocity.y, _rb.velocity.x) * Mathf.Rad2Deg;        
-        transform.rotation = Quaternion.Euler(0, 0, desiredRotation);
+        Vector2 actualAppliedForce = Vector2.Lerp(enemyPursueVelocityDistance, totalTargetVelocity, boidBehaviorWeight).ClampMagnitude(0f, cfg.VelocityApplicationCap);
+        if (!actualAppliedForce.IsNaN())
+            _rb.AddForce(actualAppliedForce);
     }
 
-    Vector2 SteerTowards(Vector2 vector)
+    public void Randomize(System.Random random)
     {
-        Vector2 vec = vector.normalized * _permittedSpeed.Max - _rb.velocity;
-        return Vector2.ClampMagnitude(vec, _maxSteeringForce);
+        _enemyPursueFactor = cfg.EnemyPursueProbabilityCurve.Evaluate(random.NextFloat()).Clamp01();
+    }
+
+    void UpdateModel()
+    {
+        if (_model.IsNotNil())
+        {
+            float rot = Mathf.Atan2(_rb.velocity.y, _rb.velocity.x) * Mathf.Rad2Deg;
+            _model.rotation = Quaternion.Euler(0, 0, rot);
+        }
     }
 }

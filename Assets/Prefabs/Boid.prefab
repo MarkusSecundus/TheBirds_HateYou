@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 1595380655049647897}
   - component: {fileID: 4842617547046404790}
   m_Layer: 7
-  m_Name: Boid2
+  m_Name: Boid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
