@@ -1,5 +1,7 @@
-﻿using MarkusSecundus.Utils.Extensions;
+﻿using MarkusSecundus.Utils.Datastructs;
+using MarkusSecundus.Utils.Extensions;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +19,23 @@ namespace MarkusSecundus.Utils.Physics
         HashSet<Collider>   _collisions;
         HashSet<Collider2D> _triggers2D;
         HashSet<Collider2D> _collisions2D;
+
+        private void Start()
+        {
+            StartCoroutine(cleanup());
+            IEnumerator cleanup()
+            {
+                while (true)
+                {
+                    yield return new WaitForSeconds(1.37f);
+                    List<object> buffer = new();
+                    _triggers?.RemoveAllDead(buffer);
+                    _collisions?.RemoveAllDead(buffer);
+                    _triggers2D?.RemoveAllDead(buffer);
+                    _collisions2D?.RemoveAllDead(buffer);
+                }
+            }
+        }
 
         public IReadOnlyCollection<Collider> ActiveTriggers => _triggers??= new();
         public IReadOnlyCollection<Collider2D> ActiveTriggers2D => _triggers2D ??= new();

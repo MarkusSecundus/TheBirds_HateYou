@@ -111,6 +111,8 @@ namespace MarkusSecundus.Utils.Primitives
         {
             KeepOriginal = VectorField.FieldType.UseOriginal, X = VectorField.FieldType.X, Y = VectorField.FieldType.Y, Z = VectorField.FieldType.Z
         }
+
+        public static Vector3SerializableSwizzle Default = new Vector3SerializableSwizzle();
     }
 
     /// <summary>
@@ -439,6 +441,7 @@ namespace MarkusSecundus.Utils.Primitives
             float clampedMagnitude = magnitude.Clamp(minMagnitude, maxMagnitude);
             return (magnitude == clampedMagnitude) ? self : (normalized * clampedMagnitude); // return the original vector if no clamping is needed to prevent rounding errors
         }
+        public static Vector2 ClampMagnitude(this Vector2 self, Interval<float> magnitudeRange) => self.ClampMagnitude(magnitudeRange.Min, magnitudeRange.Max);
 
         public static Vector3 ClampMagnitude(this Vector3 self, float minMagnitude, float maxMagnitude)
         {
@@ -446,7 +449,8 @@ namespace MarkusSecundus.Utils.Primitives
             float clampedMagnitude = magnitude.Clamp(minMagnitude, maxMagnitude);
             return (magnitude == clampedMagnitude) ? self : (normalized * clampedMagnitude); // return the original vector if no clamping is needed to prevent rounding errors
         }
-        
+        public static Vector3 ClampMagnitude(this Vector3 self, Interval<float> magnitudeRange) => self.ClampMagnitude(magnitudeRange.Min, magnitudeRange.Max);
+
 
 
 

@@ -6,12 +6,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Boid", menuName = "Config/BoidConfig", order = 1)]
 public class BoidConfig : ScriptableObject
 {
+    public string EnemyTag = "Player";
     public float DistanceToDie = 70f;
     public AnimationCurve EnemyPursueProbabilityCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
 
     public Interval<float> VelocityRange = new Interval<float>(8f, 25f);
+    public float VelocityApplicationCap = 30f;
 
-    [Range(0f,1f)] public float BoidBehaviorWeight = 0.8f;
+    [Range(-1f,1f)] public float BoidBehaviorWeight = 0.0f;
 
     [Header("Separation")]
     public float SeparationWeight = 1f;
