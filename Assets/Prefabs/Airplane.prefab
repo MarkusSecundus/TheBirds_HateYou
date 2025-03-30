@@ -202,12 +202,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023134583692171972}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.218, y: -0.824, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7175281399952122273}
+  m_Father: {fileID: 3480481310202586512}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1472695034463591334
 GameObject:
@@ -239,7 +239,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7175281399952122273}
+  m_Father: {fileID: 3480481310202586512}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &3541508854324443171
 TrailRenderer:
@@ -383,7 +383,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7175281399952122273}
+  m_Father: {fileID: 3480481310202586512}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1825763925341714673
 GameObject:
@@ -508,12 +508,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024672328833208204}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.553, y: 0, z: 0}
   m_LocalScale: {x: 0.048193, y: 0.42559, z: 0.0082135}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7175281399952122273}
+  m_Father: {fileID: 3480481310202586512}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5901143429699940848
 MeshFilter:
@@ -658,13 +658,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8779297909777065973}
-  - {fileID: 8161166772173911370}
-  - {fileID: 5299975564036614191}
-  - {fileID: 6937523868679844676}
-  - {fileID: 374997327033577923}
-  - {fileID: 3001973441634214358}
-  - {fileID: 5252450937393833171}
+  - {fileID: 3480481310202586512}
   m_Father: {fileID: 5932949172515028}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4711140910786233613
@@ -1005,10 +999,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cfg: {fileID: 11400000, guid: 1525898033eb8da44b08339da6956e63, type: 2}
+  _tiltRate: 1
+  _maxTiltAngle: 35
   _tempThrottleUI: {fileID: 0}
   _airplaneModel: {fileID: 7175281399952122273}
+  _airplaneTiltNode: {fileID: 3480481310202586512}
   modelUp: {x: 1, y: 0, z: 0}
   _modelShift: {x: 0, y: 0, z: 0}
+  _wingTipTrails:
+  - {fileID: 3541508854324443171}
+  - {fileID: 6433302777844071415}
 --- !u!114 &4469137117346887092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1151,7 +1151,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 7175281399952122273}
+  m_Father: {fileID: 3480481310202586512}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 90}
 --- !u!33 &8263451799539316589
 MeshFilter:
@@ -1417,7 +1417,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7175281399952122273}
+  m_Father: {fileID: 3480481310202586512}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &6433302777844071415
 TrailRenderer:
@@ -1563,7 +1563,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7175281399952122273}
+  m_Father: {fileID: 3480481310202586512}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!2083052967 &8687996658695759457
 VisualEffect:
@@ -1662,7 +1662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5875896672407786091
 Transform:
   m_ObjectHideFlags: 0
@@ -1845,4 +1845,42 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 212344039178360809}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8891770254343161998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3480481310202586512}
+  m_Layer: 0
+  m_Name: TiltNode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3480481310202586512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8891770254343161998}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8779297909777065973}
+  - {fileID: 8161166772173911370}
+  - {fileID: 5299975564036614191}
+  - {fileID: 6937523868679844676}
+  - {fileID: 374997327033577923}
+  - {fileID: 3001973441634214358}
+  - {fileID: 5252450937393833171}
+  m_Father: {fileID: 7175281399952122273}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
