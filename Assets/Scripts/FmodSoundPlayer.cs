@@ -129,14 +129,45 @@ public class FmodSoundPlayer : MonoBehaviour
         _volumeTarget = targetVolume;
     }
 
-    public void SetParameter(string name, float value)
+    public void SetParameter(string name, float value, ParameterSettingMode mode = ParameterSettingMode.Always)
     {
         MakeSureIsInitialized();
+        if(mode != ParameterSettingMode.Always)
+        {
+            if(_currentInstance.getParameterByName(name, out float currentValue) != FMOD.RESULT.OK)
+            {
+                if (mode switch
+                {
+                    ParameterSettingMode.DecreaseOnly => value >= currentValue,
+                    ParameterSettingMode.IncreaseOnly => value <= currentValue
+                })
+                {
+                    Debug.LogWarning($"Skipped {name} = {value}", this);
+                    return;
+                }
+            }
+        }
         _currentInstance.setParameterByName(name, value);
     }
 
-    public void SetGlobalParameter(string name, float value)
+    public void SetGlobalParameter(string name, float value, ParameterSettingMode mode = ParameterSettingMode.Always)
     {
+        if (mode != ParameterSettingMode.Always)
+        {
+            if (RuntimeManager.StudioSystem.getParameterByName(name, out float currentValue) != FMOD.RESULT.OK)
+            {
+                if (mode switch
+                {
+                    ParameterSettingMode.DecreaseOnly => value >= currentValue,
+                    ParameterSettingMode.IncreaseOnly => value <= currentValue
+                })
+                {
+                    Debug.LogWarning($"Skipped {name} = {value}", this);
+                    return;
+                }
+            }
+        }
+        Debug.LogWarning($"Setting {name} = {value}");
         RuntimeManager.StudioSystem.setParameterByName(name, value);
     }
 
@@ -170,30 +201,44 @@ public class FmodSoundPlayer : MonoBehaviour
         }
     }
 
-
-    bool _tryParseParameterCommand(string nameAndValue, out string name, out float value,[System.Runtime.CompilerServices.CallerMemberName] string callerName = "<dummy>")
+    [System.Serializable]
+    public enum ParameterSettingMode
     {
+        Always,
+        IncreaseOnly,
+        DecreaseOnly
+    }
+
+    bool _tryParseParameterCommand(string nameAndValue, out string name, out float value, out ParameterSettingMode mode,[System.Runtime.CompilerServices.CallerMemberName] string callerName = "<dummy>")
+    {
+        mode = ParameterSettingMode.Always;
         Debug.Log($"{callerName}({nameAndValue})", this);
         var ret = nameAndValue.Split(" ");
-        if (ret.Length != 2 || !float.TryParse(ret[1], out value))
+        if (ret.Length < 2 || !float.TryParse(ret[ret.Length-1], out value))
         {
             Debug.LogError($"Invalid request for {callerName}(): '{nameAndValue}'");
             (name, value) = (null, 0);
             return false;
         }
         name = ret[0];
+        if (ret.Length == 3) mode = ret[1] switch
+        {
+            "+" => ParameterSettingMode.IncreaseOnly,
+            "-" => ParameterSettingMode.DecreaseOnly,
+            _ => ParameterSettingMode.Always
+        };
         return true;
     }
     // Only way to be able to do this stuff from UnityEvents in the editor
     public void SetParameter(string nameAndValue)
     {
-        if(_tryParseParameterCommand(nameAndValue, out string name, out float value))
-        SetParameter(name, value);
+        if(_tryParseParameterCommand(nameAndValue, out string name, out float value, out var mode))
+        SetParameter(name, value, mode);
     }
     public void SetGlobalParameter(string nameAndValue)
     {
-        if(_tryParseParameterCommand(nameAndValue, out string name, out float value))
-        SetGlobalParameter(name, value);
+        if(_tryParseParameterCommand(nameAndValue, out string name, out float value, out var mode))
+        SetGlobalParameter(name, value, mode);
     }
 
 

@@ -16,6 +16,7 @@ public class UIScreen : MonoBehaviour
     {
         this.gameObject.SetActive(true);
         DOVirtual.DelayedCall(ShowDuration, () => HideScreen());
+        DOVirtual.DelayedCall(ShowDuration - TextAppearDuration, () => text.DOColor(Color.clear, TextAppearDuration));
         text.color = Color.clear;
         text.DOColor(Color.white, TextAppearDuration);
     }

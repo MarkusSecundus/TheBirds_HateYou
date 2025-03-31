@@ -47,7 +47,7 @@ public class UIScreenSequence : MonoBehaviour
 
     public void CurrentScreenEnded()
     {
-        DOVirtual.DelayedCall(0.1f, () => ShowNext());
+        DOVirtual.DelayedCall(screenBlinkDuration, () => ShowNext());
     }
 
     public void ShowNext()

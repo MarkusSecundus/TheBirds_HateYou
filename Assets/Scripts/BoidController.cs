@@ -16,7 +16,7 @@ public class BoidController : MonoBehaviour, IRandomizer
     [SerializeField] ColliderActivityTracker _radar;
     public Vector2 LastVelocity { get; private set; }
 
-    Rigidbody2D _enemy;
+    public Rigidbody2D _enemy;
     [SerializeField] BoidConfig cfg;
     
     [SerializeField] float _enemyPursueFactor;
@@ -50,7 +50,7 @@ public class BoidController : MonoBehaviour, IRandomizer
     {
         _rb = GetComponent<Rigidbody2D>();
         _radar.RegisterListener(_radarData);
-        _enemy = TagSearchable.FindByTag<Rigidbody2D>(cfg.EnemyTag);
+        //_enemy = TagSearchable.FindByTag<Rigidbody2D>(cfg.EnemyTag);
     }
 
     void FixedUpdate()
@@ -78,6 +78,7 @@ public class BoidController : MonoBehaviour, IRandomizer
 
         if (_radarData.Active.IsEmpty() || boidBehaviorWeight >= 0.95f)
         {
+            Debug.Log($"S_{name}: {_rb.velocity.magnitude}", this);
             _rb.AddForce(enemyPursueVelocityDistance.ClampMagnitude(0f, cfg.VelocityApplicationCap));
             return;
         }
@@ -133,6 +134,7 @@ public class BoidController : MonoBehaviour, IRandomizer
         Vector2 actualAppliedForce = Vector2.Lerp(enemyPursueVelocityDistance, totalTargetVelocity, boidBehaviorWeight).ClampMagnitude(0f, cfg.VelocityApplicationCap);
         if (!actualAppliedForce.IsNaN())
             _rb.AddForce(actualAppliedForce);
+        Debug.Log($"{name}: {_rb.velocity.magnitude}", this);
     }
 
     public void Randomize(System.Random random)

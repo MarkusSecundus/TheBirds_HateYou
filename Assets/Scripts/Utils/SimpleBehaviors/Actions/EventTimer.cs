@@ -22,10 +22,12 @@ namespace MarkusSecundus.Utils.Behaviors.Actions
         /// </summary>
         public bool OnStartup = false;
 
+        public float StartupDelaySeconds = 0f;
+
         // Start is called before the first frame update
         void Start()
         {
-            if (OnStartup) StartTimer();
+            if (OnStartup) this.InvokeWithDelay( StartTimer, StartupDelaySeconds);
         }
 
         /// <summary>

@@ -435,6 +435,9 @@ MonoBehaviour:
   SpawnLocation: {fileID: 132922408641826108}
   MaxChildrenInExistence: 40
   ParentToFill: {fileID: 5624810557137879926}
+  GroupSize:
+    Min: 1
+    Max: 4
   ToPlace: {fileID: 721675864841403625, guid: 0565f96fa0864be4b8ad3fbf52428442, type: 3}
   Seed: 0
   RandomSeed: 1
@@ -675,7 +678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextureObject: {fileID: 8779297909777065973}
   _colorBlinkDur: 0.1
-  _colorBlinkCount: 5
+  _colorBlinkCount: 3
 --- !u!1 &3109938119478942730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,7 +1359,19 @@ MonoBehaviour:
     values: []
   OnAttacked:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4711140910786233613}
+        m_TargetAssemblyTypeName: PlaneHitEffect, Assembly-CSharp
+        m_MethodName: PlayHitEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   MinTimeBetweenAttacks: 0.5
 --- !u!61 &960324266569517489
 BoxCollider2D:

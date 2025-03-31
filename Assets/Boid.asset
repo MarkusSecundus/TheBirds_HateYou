@@ -48,10 +48,10 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   VelocityRange:
-    Min: 10
-    Max: 28
-  VelocityApplicationCap: 10
-  BoidBehaviorWeight: 0.722
+    Min: 5
+    Max: 20
+  VelocityApplicationCap: 20
+  BoidBehaviorWeight: -0.59
   SeparationWeight: 1.9
   SeparationDistance: 5.99
   SeparationCurve:

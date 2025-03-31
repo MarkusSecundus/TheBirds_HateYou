@@ -17,7 +17,7 @@ namespace Assets.Scripts.DamageSystem
 
         void OnCollisionEnter(Collision collision) => DoDamage(IArmorPiece.Get(collision.collider));
         void OnCollisionEnter2D(Collision2D collision) => DoDamage(IArmorPiece.Get(collision.collider));
-        void OnTriggerEnter(Collider other) => DoDamage(IArmorPiece.Get(other));
+        void OnTriggerEnter(Collider other) { }
         void OnTriggerEnter2D(Collider2D other) => DoDamage(IArmorPiece.Get(other));
 
         void DoDamage(IArmorPiece armorPiece)
@@ -28,5 +28,7 @@ namespace Assets.Scripts.DamageSystem
             armorPiece.Attack(attackDeclaration);
             OnAttacked?.Invoke(attackDeclaration, armorPiece);
         }
+
+        public void SetDamage(float dmg) => Damage = dmg;
     }
 }

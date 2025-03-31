@@ -12,6 +12,7 @@ using UnityEngine.UI;
 
 public class AirplaneController : MonoBehaviour
 {
+    [SerializeField] float CurrentVelocity;
     [SerializeField] AirplaneConfig cfg;
 
 
@@ -76,6 +77,7 @@ public class AirplaneController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        CurrentVelocity = _rb.velocity.magnitude;
         EvaluateForces();
     }
 
@@ -85,6 +87,7 @@ public class AirplaneController : MonoBehaviour
     SerializableDictionary<float, UnityEvent> _actionsOnHealthDrop;
     [SerializeField]
     SerializableDictionary<float, UnityEvent> _actionsOnHeightDrop;
+    HashSet<float> _heightDropActionsAlreadyUsed = new HashSet<float>();
 
 
     [SerializeField] AnimationCurve DamageToHeightLossMapping;
@@ -174,6 +177,15 @@ public class AirplaneController : MonoBehaviour
             OnZeroHeightReached?.Invoke();
         }
 
+        var ratio = CurrentHeight / StartHeight;
+        foreach (var (actionRatio, action) in _actionsOnHeightDrop.Values)
+        {
+            if (ratio < actionRatio && !_heightDropActionsAlreadyUsed.Contains(actionRatio))
+            {
+                _heightDropActionsAlreadyUsed.Add(actionRatio);
+                action?.Invoke();
+            }
+        }
     }
 
 
