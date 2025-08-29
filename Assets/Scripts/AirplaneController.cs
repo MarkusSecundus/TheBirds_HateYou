@@ -223,22 +223,15 @@ public class AirplaneController : MonoBehaviour
     {
         bool tiltChanged = false;
 
-        if (Input.GetKey(KeyCode.A))
+        float axisHorizontal = -Input.GetAxis("Horizontal");
+        if (axisHorizontal != 0f)
         {
-            _tilt = Mathf.Clamp(_tilt + _tiltRate * Time.deltaTime, -1f, 1f);
+            _tilt = Mathf.Clamp(_tilt + axisHorizontal*_tiltRate * Time.deltaTime, -1f, 1f);
             tiltChanged = true;
-            rotationInput += cfg.RotationChangePerSeconds_degrees * Time.deltaTime;
+            rotationInput += axisHorizontal * cfg.RotationChangePerSeconds_degrees * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.D))
-        {
-            _tilt = Mathf.Clamp(_tilt - _tiltRate * Time.deltaTime, -1f, 1f);
-            tiltChanged = true;
-            rotationInput -= cfg.RotationChangePerSeconds_degrees * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.W))        
-            speedInput += cfg.VelocityChangePerSecond * Time.deltaTime;        
-        if (Input.GetKey(KeyCode.S))
-            speedInput -= cfg.VelocityChangePerSecond * Time.deltaTime;
+        float axisVertical = Input.GetAxis("Vertical");
+        speedInput += axisVertical * cfg.VelocityChangePerSecond * Time.deltaTime;
 
         if(!tiltChanged)
         {
